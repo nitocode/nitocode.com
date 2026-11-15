@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nitocode · des jeux gratuits, codés le soir</title>
+<meta name="description" content="Nitocode, c'est moi : un dev salarié qui code des jeux gratuits et sans pub le soir. Noubal, le quiz de soirée, et Nitosouris, pour progresser aux jeux vidéo.">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="img/avatar.png">
+<meta property="og:title" content="Nitocode · des jeux gratuits, codés le soir">
+<meta property="og:description" content="Noubal, le quiz de soirée, et Nitosouris, pour progresser aux jeux vidéo. Gratuits, sans pub.">
+<meta property="og:image" content="https://nitocode.com/img/og.png">
+<meta property="og:url" content="https://nitocode.com/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@nitocode">
+<meta name="theme-color" content="#0F1115">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --encre: #0F1115; --encre-2: #171A21; --encre-3: #20242D;
+    --papier: #F4F1EA; --violet: #9B7BFF; --gris: #8A8F98;
+    --noubal: #FFC83D; --souris: #4FD1C5;
+    --mono: "JetBrains Mono", Consolas, monospace;
+    --sans: "Space Grotesk", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--encre); color: var(--papier); font: 18px/1.6 var(--sans); }
+  a { color: inherit; }
+  .page { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+  .mono { font-family: var(--mono); }
+
+  header { padding: 72px 0 56px; }
+  header .logo { width: min(440px, 88%); height: auto; display: block; }
+  h1 { font-size: clamp(32px, 6vw, 52px); line-height: 1.1; margin: 44px 0 16px; font-weight: 700; letter-spacing: -0.02em; }
+  h1 em { font-style: normal; color: var(--violet); }
+  .chapo { color: var(--gris); max-width: 620px; margin: 0; font-size: 20px; }
+  .boutons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 10px; font-weight: 500;
+         text-decoration: none; border: 2px solid var(--violet); transition: background .15s, color .15s; }
+  .btn.plein { background: var(--violet); color: var(--encre); }
+  .btn:hover, .btn:focus-visible { background: var(--papier); border-color: var(--papier); color: var(--encre); }
+
+  section { padding: 48px 0; border-top: 1px solid var(--encre-3); }
+  h2 { font: 600 14px var(--mono); text-transform: lowercase; letter-spacing: .04em; color: var(--violet); margin: 0 0 24px; }
+  h2::before { content: "<"; } h2::after { content: "/>"; }
+
+  .projets { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+  .carte { background: var(--encre-2); border: 1px solid var(--encre-3); border-radius: 16px; padding: 28px; display: flex; flex-direction: column;
+           border-top: 4px solid var(--c); }
+  .carte h3 { font-size: 28px; margin: 0 0 4px; }
+  .carte .tag { font: 13px var(--mono); color: var(--c); margin: 0 0 16px; }
+  .carte p { margin: 0 0 12px; }
+  .carte ul { margin: 0 0 20px; padding-left: 20px; color: var(--gris); }
+  .carte .lien { margin-top: auto; font-weight: 500; color: var(--c); text-decoration: none; }
+  .carte .lien:hover { text-decoration: underline; }
+
+  .deux { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; align-items: start; }
+  .deux p { margin: 0 0 14px; }
+  .terminal { background: var(--encre-2); border: 1px solid var(--encre-3); border-radius: 12px; padding: 20px; font: 15px/1.8 var(--mono); color: var(--gris); }
+  .terminal b { color: var(--papier); font-weight: 600; }
+  .terminal .v { color: var(--violet); }
+
+  .soutien { background: var(--encre-2); border: 1px solid var(--encre-3); border-radius: 16px; padding: 32px; display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between; }
+  .soutien p { margin: 0; max-width: 560px; }
+
+  .reseaux { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 10px; }
+  .reseaux a { display: flex; justify-content: space-between; gap: 12px; padding: 14px 16px; border-radius: 10px; background: var(--encre-2);
+               border: 1px solid var(--encre-3); text-decoration: none; }
+  .reseaux a:hover { border-color: var(--violet); }
+  .reseaux span:last-child { font: 14px var(--mono); color: var(--gris); }
+
+  footer { padding: 40px 0 56px; border-top: 1px solid var(--encre-3); color: var(--gris); font: 14px var(--mono); display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: center; }
+  footer img { width: 40px; height: auto; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <img class="logo" src="img/logo-complet.svg" alt="Nitocode" width="1080" height="212">
+  <h1>Je code des jeux <em>gratuits</em>,<br>le soir, après le boulot.</h1>
+  <p class="chapo">Salut, moi c'est Nitocode. Développeur salarié la journée, je fabrique le soir des jeux sans pub ni abonnement, et je partage les coulisses en public.</p>
+  <div class="boutons">
+    <a class="btn plein" href="#projets">Voir les projets</a>
+    <a class="btn" href="https://ko-fi.com/nitocode">Soutenir sur Ko-fi ☕</a>
+  </div>
+</header>
+
+<section id="projets">
+  <h2>projets</h2>
+  <div class="projets">
+    <article class="carte" style="--c: var(--noubal)">
+      <h3>Noubal</h3>
+      <p class="tag">quiz de soirée · FR + EN</p>
+      <p>Un écran partagé, chacun répond sur son téléphone. Le jeu parfait pour un apéro ou une soirée entre amis.</p>
+      <ul>
+        <li>Rien à installer : on rejoint avec un QR code et un pseudo</li>
+        <li>Plus de 20 thèmes, des milliers de questions, « Tu préfères », enchères…</li>
+        <li>Les joueurs notent chaque question, et je réécris celles qui ne marchent pas</li>
+      </ul>
+      <a class="lien" href="https://noubal.com">Jouer sur noubal.com →</a>
+    </article>
+    <article class="carte" style="--c: var(--souris)">
+      <h3>Nitosouris</h3>
+      <p class="tag">progresser aux jeux vidéo</p>
+      <p>Un site pour progresser aux jeux vidéo, qu'on soit novice complet ou déjà gamer, à son rythme.</p>
+      <ul>
+        <li>Gratuit, directement dans le navigateur</li>
+        <li>Refonte complète en cours : circuits, école de drift, arbre de progression</li>
+        <li>Un univers à lui, avec une histoire en préparation</li>
+      </ul>
+      <a class="lien" href="https://nitosouris.com">Essayer nitosouris.com →</a>
+    </article>
+  </div>
+</section>
+
+<section id="coulisses">
+  <h2>coulisses</h2>
+  <div class="deux">
+    <div>
+      <p>Je n'ai que quelques heures par semaine. Alors je me suis construit un petit QG : un brief chaque matin sur Discord avec <strong>une</strong> tâche de 25 minutes, des assistants IA qui préparent le travail, et GitHub pour tout garder.</p>
+      <p>Je raconte comment ça marche, ce qui rate et ce qui avance sur X, en <em>build in public</em>.</p>
+      <a class="btn" href="https://x.com/nitocode">Suivre @nitocode</a>
+    </div>
+    <div class="terminal" aria-label="La règle de travail">
+      <div><span class="v">$</span> <b>nitocode --regles</b></div>
+      <div>3 projets actifs, pas un de plus</div>
+      <div>1 tâche par soir, 25 min</div>
+      <div>tout gratuit, sans pub</div>
+      <div>on montre, même quand c'est pas fini</div>
+    </div>
+  </div>
+</section>
+
+<section id="soutenir">
+  <h2>soutenir</h2>
+  <div class="soutien">
+    <p>Noubal et Nitosouris sont gratuits et le resteront. Si l'un d'eux t'a fait passer un bon moment, un café sur Ko-fi aide à payer les serveurs.</p>
+    <a class="btn plein" href="https://ko-fi.com/nitocode">Offrir un café ☕</a>
+  </div>
+</section>
+
+<section id="reseaux">
+  <h2>réseaux</h2>
+  <ul class="reseaux">
+    <li><a href="https://x.com/nitocode"><span>Nitocode sur X</span><span>@nitocode</span></a></li>
+    <li><a href="https://github.com/nitocode"><span>GitHub</span><span>nitocode</span></a></li>
+    <li><a href="https://x.com/noubal_quiz"><span>Noubal sur X</span><span>@noubal_quiz</span></a></li>
+    <li><a href="https://www.instagram.com/noubal"><span>Noubal sur Instagram</span><span>@noubal</span></a></li>
+    <li><a href="https://www.tiktok.com/@noubal.quiz"><span>Noubal sur TikTok</span><span>@noubal.quiz</span></a></li>
+    <li><a href="https://discord.gg/mTu8AkUkkw"><span>Discord de Noubal</span><span>rejoindre</span></a></li>
+    <li><a href="https://x.com/nitosouris"><span>Nitosouris sur X</span><span>@nitosouris</span></a></li>
+    <li><a href="https://ko-fi.com/nitocode"><span>Ko-fi</span><span>nitocode</span></a></li>
+  </ul>
+</section>
+
+<footer>
+  <img src="img/logo-violet.svg" alt="" width="254" height="212">
+  <span>nitocode · fait main, le soir</span>
+</footer>
+
+</div>
+</body>
+</html>
