@@ -495,7 +495,10 @@
       if (e.grosse && ((t + e.p) % e.per) < e.per * .6) { px(e.x - 1, e.y, c); px(e.x + 1, e.y, c); px(e.x, e.y - 1, c); px(e.x, e.y + 1, c); }
     }
     // Lune en croissant
-    const r = Math.min(9, Math.max(5, Math.round(W / 40))), mx = Math.round(W * .86), my = W < 130 ? r + 3 : Math.round(H * .2);
+    const r = Math.min(9, Math.max(5, Math.round(W / 40))), my = W < 130 ? r + 3 : Math.round(H * .2);
+    let mx = Math.round(W * .86);
+    // Sur mobile, la lune monte tout en haut : on la décale à gauche du bouton FR/EN pour qu'il ne la cache pas
+    if (W < 130) mx = Math.min(mx, Math.floor((document.querySelector('.langues').offsetLeft - 14) / P) - r);
     for (let y = -r; y <= r; y++) for (let x = -r; x <= r; x++) {
       if (x * x + y * y <= r * r && (x - 3) ** 2 + (y + 2) ** 2 > (r - 1) ** 2) px(mx + x, my + y, '#F4F1EA');
     }
