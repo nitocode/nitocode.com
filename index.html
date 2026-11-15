@@ -127,6 +127,14 @@
   .menu .h { color: var(--gris); font-family: var(--mono); }
   .menu a:hover .nom { color: var(--violet); }
 
+  /* ---------- Choix de la langue ---------- */
+  .langues { position: absolute; top: 14px; right: 16px; z-index: 2; display: flex; box-shadow: 4px 4px 0 #000; }
+  .langues button { font: 700 15px/1 var(--mono); letter-spacing: .05em; padding: 9px 11px 8px; border: 0; cursor: pointer;
+                    background: var(--nuit); color: var(--gris); box-shadow: inset 0 0 0 2px var(--bloc-2); }
+  .langues button:hover { color: var(--papier); }
+  .langues button[aria-pressed="true"] { background: var(--violet); color: var(--encre); box-shadow: none; cursor: default; }
+  .langues button:focus-visible { outline: 3px solid var(--noubal); outline-offset: 2px; position: relative; }
+
   footer { padding: 36px 0 48px; display: flex; flex-wrap: wrap; gap: 14px; align-items: center; justify-content: space-between; color: var(--gris); }
   footer .signe { display: flex; align-items: center; gap: 12px; }
   footer svg { width: 28px; height: auto; }
@@ -145,14 +153,18 @@
 
 <header class="scene">
   <canvas id="nuit" aria-hidden="true"></canvas>
+  <div class="langues" role="group" aria-label="Langue / Language">
+    <button type="button" data-l="fr" lang="fr" aria-pressed="true" title="Français">FR</button>
+    <button type="button" data-l="en" lang="en" aria-pressed="false" title="English">EN</button>
+  </div>
   <div class="page">
     <img class="logo" src="img/logo-complet.svg" alt="Nitocode" width="1080" height="212">
     <p class="sur">// night code</p>
-    <h1 id="titre" aria-label="J'expérimente pour moi, tout le monde en profite."><span class="a" aria-hidden="true">J'expérimente pour moi,</span><br><em class="b" aria-hidden="true">tout le monde en profite</em><span aria-hidden="true">.</span><span class="curseur" aria-hidden="true"></span></h1>
-    <p class="chapo">Salut, moi c'est Nitocode. Dev le jour, le soir je pars de mes propres problèmes (comme une soirée entre amis sans bon jeu à plusieurs) et j'expérimente jusqu'à trouver une solution. Elle me sert d'abord, puis je la partage pour que tout le monde en profite, et je raconte comment c'est fait.</p>
+    <h1 id="titre" aria-label="J'expérimente pour moi, tout le monde en profite."><span class="a" data-t="t-a" aria-hidden="true">J'expérimente pour moi,</span><br><em class="b" data-t="t-b" aria-hidden="true">tout le monde en profite</em><span aria-hidden="true">.</span><span class="curseur" aria-hidden="true"></span></h1>
+    <p class="chapo" data-t="chapo">Salut, moi c'est Nitocode. Dev le jour, le soir je pars de mes propres problèmes (comme une soirée entre amis sans bon jeu à plusieurs) et j'expérimente jusqu'à trouver une solution. Elle me sert d'abord, puis je la partage pour que tout le monde en profite, et je raconte comment c'est fait.</p>
     <div class="boutons">
-      <a class="btn" href="#experiences">Voir les expériences</a>
-      <a class="btn creux" href="https://ko-fi.com/nitocode">Soutenir sur Ko-fi</a>
+      <a class="btn" href="#experiences" data-t="b-exp">Voir les expériences</a>
+      <a class="btn creux" href="https://ko-fi.com/nitocode" data-t="b-kofi">Soutenir sur Ko-fi</a>
     </div>
   </div>
 </header>
@@ -161,7 +173,7 @@
 <main class="page">
 
 <section id="experiences">
-  <h2 class="revele"><span class="invite">&gt;</span> Expériences</h2>
+  <h2 class="revele"><span class="invite">&gt;</span> <span data-t="h-exp">Expériences</span></h2>
   <div class="cartouches">
     <div class="support revele">
       <article class="cartouche" style="--c: var(--noubal)">
@@ -169,15 +181,15 @@
           <span class="num">EXP_01</span>
           <h3>Noubal</h3>
           <span data-icone="bulle"></span>
-          <p class="tag">quiz multijoueur en temps réel · FR + EN</p>
+          <p class="tag" data-t="n-tag">quiz multijoueur en temps réel · FR + EN</p>
         </div>
-        <p>Un écran partagé, chacun répond sur son téléphone. Le jeu parfait pour un apéro ou une soirée entre amis.</p>
+        <p data-t="n-p">Un écran partagé, chacun répond sur son téléphone. Le jeu parfait pour un apéro ou une soirée entre amis.</p>
         <ul>
-          <li>Rien à installer : on rejoint avec un QR code et un pseudo</li>
-          <li>Plus de 20 thèmes, des milliers de questions, « Tu préfères », enchères…</li>
-          <li>Les joueurs notent chaque question, et je réécris celles qui ne marchent pas</li>
+          <li data-t="n-1">Rien à installer : on rejoint avec un QR code et un pseudo</li>
+          <li data-t="n-2">Plus de 20 thèmes, des milliers de questions, « Tu préfères », enchères…</li>
+          <li data-t="n-3">Les joueurs notent chaque question, et je réécris celles qui ne marchent pas</li>
         </ul>
-        <a class="lien" href="https://noubal.com">Jouer sur noubal.com</a>
+        <a class="lien" href="https://noubal.com" data-t="n-lien">Jouer sur noubal.com</a>
         <div class="rainures"></div>
       </article>
     </div>
@@ -187,15 +199,15 @@
           <span class="num">EXP_02</span>
           <h3>Nitosouris</h3>
           <span data-icone="souris"></span>
-          <p class="tag">apprendre à jouer, dans le navigateur</p>
+          <p class="tag" data-t="s-tag">apprendre à jouer, dans le navigateur</p>
         </div>
-        <p>Un site pour progresser aux jeux vidéo, qu'on soit novice complet ou déjà gamer, à son rythme.</p>
+        <p data-t="s-p">Un site pour progresser aux jeux vidéo, qu'on soit novice complet ou déjà gamer, à son rythme.</p>
         <ul>
-          <li>Directement dans le navigateur, sans rien installer</li>
-          <li>Refonte complète en cours : circuits, école de drift, arbre de progression</li>
-          <li>Un univers à lui, avec une histoire en préparation</li>
+          <li data-t="s-1">Directement dans le navigateur, sans rien installer</li>
+          <li data-t="s-2">Refonte complète en cours : circuits, école de drift, arbre de progression</li>
+          <li data-t="s-3">Un univers à lui, avec une histoire en préparation</li>
         </ul>
-        <a class="lien" href="https://nitosouris.com">Essayer nitosouris.com</a>
+        <a class="lien" href="https://nitosouris.com" data-t="s-lien">Essayer nitosouris.com</a>
         <div class="rainures"></div>
       </article>
     </div>
@@ -203,21 +215,21 @@
 </section>
 
 <section id="labo">
-  <h2 class="revele"><span class="invite">&gt;</span> Labo</h2>
+  <h2 class="revele"><span class="invite">&gt;</span> <span data-t="h-labo">Labo</span></h2>
   <div class="deux">
     <div>
-      <p>Le labo tourne avec quelques heures par semaine. Pour tenir, je me suis construit un QG : un brief chaque matin sur Discord avec <strong>une</strong> tâche de 25 minutes, des assistants IA qui préparent le travail, et GitHub pour tout garder.</p>
-      <p>Les essais, les ratés et ce que j'en apprends, je les partage sur X, en build in public : si ça peut servir à quelqu'un, tant mieux.</p>
-      <a class="btn creux" href="https://x.com/nitocode">Suivre @nitocode</a>
+      <p data-t="l-1">Le labo tourne avec quelques heures par semaine. Pour tenir, je me suis construit un QG : un brief chaque matin sur Discord avec <strong>une</strong> tâche de 25 minutes, des assistants IA qui préparent le travail, et GitHub pour tout garder.</p>
+      <p data-t="l-2">Les essais, les ratés et ce que j'en apprends, je les partage sur X, en build in public : si ça peut servir à quelqu'un, tant mieux.</p>
+      <a class="btn creux" href="https://x.com/nitocode" data-t="l-suivre">Suivre @nitocode</a>
     </div>
-    <div class="ecran revele" role="group" aria-label="Les règles du labo">
-      <div class="barre"><span>regles.txt</span><span id="heure"></span></div>
+    <div class="ecran revele" role="group" aria-label="Les règles du labo" data-ta="e-aria">
+      <div class="barre"><span data-t="e-fic">regles.txt</span><span id="heure"></span></div>
       <div class="corps">
-        <div class="l" style="--i:0"><span class="v">nitocode@nuit:~$</span> <b>cat regles.txt</b></div>
-        <div class="l" style="--i:1">1. partir de mes vrais problèmes</div>
-        <div class="l" style="--i:2">2. expérimenter, même si ça rate</div>
-        <div class="l" style="--i:3">3. ce qui marche : je le partage</div>
-        <div class="l" style="--i:4">4. raconter ce que j'apprends</div>
+        <div class="l" style="--i:0"><span class="v">nitocode@nuit:~$</span> <b data-t="e-cmd">cat regles.txt</b></div>
+        <div class="l" style="--i:1" data-t="e-1">1. partir de mes vrais problèmes</div>
+        <div class="l" style="--i:2" data-t="e-2">2. expérimenter, même si ça rate</div>
+        <div class="l" style="--i:3" data-t="e-3">3. ce qui marche : je le partage</div>
+        <div class="l" style="--i:4" data-t="e-4">4. raconter ce que j'apprends</div>
         <div class="l fin" style="--i:5"><span class="v">nitocode@nuit:~$</span> </div>
       </div>
     </div>
@@ -225,16 +237,16 @@
 </section>
 
 <section id="soutenir">
-  <h2 class="revele"><span class="invite">&gt;</span> Soutenir</h2>
+  <h2 class="revele"><span class="invite">&gt;</span> <span data-t="h-sout">Soutenir</span></h2>
   <div class="soutien revele">
     <span data-icone="cafe"></span>
-    <p>Ce qui sort du labo est fait pour être partagé. Si Noubal ou Nitosouris t'a servi, un café sur Ko-fi aide à payer les serveurs, à garder le plus de choses possible en accès libre et à tenir les prochaines nuits de code.</p>
-    <a class="btn" href="https://ko-fi.com/nitocode">Offrir un café</a>
+    <p data-t="k-p">Ce qui sort du labo est fait pour être partagé. Si Noubal ou Nitosouris t'a servi, un café sur Ko-fi aide à payer les serveurs et à tenir les prochaines nuits de code. Et surtout, il prouve à mes parents que coder la nuit, ça paie au moins les cafés.</p>
+    <a class="btn" href="https://ko-fi.com/nitocode" data-t="k-btn">Offrir un café</a>
   </div>
 </section>
 
 <section id="reseaux">
-  <h2 class="revele"><span class="invite">&gt;</span> Réseaux</h2>
+  <h2 class="revele"><span class="invite">&gt;</span> <span data-t="h-res">Réseaux</span></h2>
   <ul class="menu">
     <li><a href="https://x.com/nitocode"><span class="nom">Nitocode · X</span><span class="pts"></span><span class="h">@nitocode</span></a></li>
     <li><a href="https://www.instagram.com/nito.code"><span class="nom">Nitocode · Instagram</span><span class="pts"></span><span class="h">@nito.code</span></a></li>
@@ -242,7 +254,7 @@
     <li><a href="https://x.com/noubal_quiz"><span class="nom">Noubal · X</span><span class="pts"></span><span class="h">@noubal_quiz</span></a></li>
     <li><a href="https://www.instagram.com/noubal"><span class="nom">Noubal · Instagram</span><span class="pts"></span><span class="h">@noubal</span></a></li>
     <li><a href="https://www.tiktok.com/@noubal.quiz"><span class="nom">Noubal · TikTok</span><span class="pts"></span><span class="h">@noubal.quiz</span></a></li>
-    <li><a href="https://discord.gg/mTu8AkUkkw"><span class="nom">Noubal · Discord</span><span class="pts"></span><span class="h">rejoindre</span></a></li>
+    <li><a href="https://discord.gg/mTu8AkUkkw"><span class="nom">Noubal · Discord</span><span class="pts"></span><span class="h" data-t="r-join">rejoindre</span></a></li>
     <li><a href="https://x.com/nitosouris"><span class="nom">Nitosouris · X</span><span class="pts"></span><span class="h">@nitosouris</span></a></li>
     <li><a href="https://ko-fi.com/nitocode"><span class="nom">Ko-fi</span><span class="pts"></span><span class="h">nitocode</span></a></li>
   </ul>
@@ -252,7 +264,7 @@
 <div class="tramage"></div>
 <div class="page">
   <footer>
-    <span class="signe"><span data-icone="lune"></span>codé la nuit, utile le jour</span>
+    <span class="signe"><span data-icone="lune"></span><span data-t="pied">codé la nuit, utile le jour</span></span>
     <span>nitocode.com</span>
   </footer>
 </div>
@@ -308,24 +320,97 @@
   }
   document.querySelectorAll('[data-icone]').forEach(el => { el.outerHTML = dessinIcone(el.dataset.icone); });
 
+  /* ---------- Langues : le français est dans le HTML, l'anglais ici ---------- */
+  const EN = {
+    'titre': 'Nitocode · I experiment for myself, and everyone benefits',
+    'desc': "Nitocode: I start from my own problems, experiment at night, and what works, I share so everyone can benefit. Noubal, Nitosouris.",
+    't-a': 'I experiment for myself,', 't-b': 'and everyone benefits',
+    'chapo': "Hi, I'm Nitocode. Dev by day; at night I start from my own problems (like a night with friends and no good multiplayer game) and experiment until I find a solution. It helps me first, then I share it so everyone can benefit, and I explain how it's made.",
+    'b-exp': 'See the experiments', 'b-kofi': 'Support on Ko-fi',
+    'h-exp': 'Experiments', 'h-labo': 'Lab', 'h-sout': 'Support', 'h-res': 'Socials',
+    'n-tag': 'real-time multiplayer quiz · FR + EN',
+    'n-p': 'One shared screen, everyone answers on their phone. Perfect for drinks or a night in with friends.',
+    'n-1': 'Nothing to install: join with a QR code and a nickname',
+    'n-2': '20+ themes, thousands of questions, “Would you rather”, auctions…',
+    'n-3': "Players rate every question, and I rewrite the ones that don't work",
+    'n-lien': 'Play on noubal.com',
+    's-tag': 'learn to play, in the browser',
+    's-p': "A site to get better at video games, whether you're a total beginner or already a gamer, at your own pace.",
+    's-1': 'Right in the browser, nothing to install',
+    's-2': 'Full rebuild in progress: tracks, drift school, skill tree',
+    's-3': 'A world of its own, with a story in the works',
+    's-lien': 'Try nitosouris.com',
+    'l-1': 'The lab runs on a few hours a week. To keep it going, I built myself an HQ: a brief every morning on Discord with <strong>one</strong> 25-minute task, AI assistants that prepare the work, and GitHub to keep track of everything.',
+    'l-2': 'The attempts, the failures and what I learn from them, I share on X, building in public: if it helps someone, great.',
+    'l-suivre': 'Follow @nitocode',
+    'e-aria': 'The lab rules', 'e-fic': 'rules.txt', 'e-cmd': 'cat rules.txt',
+    'e-1': '1. start from my real problems', 'e-2': '2. experiment, even if it fails',
+    'e-3': '3. what works: I share it', 'e-4': '4. tell what I learn',
+    'k-p': 'What comes out of the lab is meant to be shared. If Noubal or Nitosouris helped you, a coffee on Ko-fi helps pay for the servers and fuels the next nights of code. Above all, it proves to my parents that coding at night at least pays for the coffee.',
+    'k-btn': 'Buy me a coffee', 'r-join': 'join', 'pied': 'coded at night, useful by day',
+    'h-nuit': ' · good time to code', 'h-jour': " · here, it's always night",
+  };
+  const FR = {
+    'titre': document.title, 'desc': document.querySelector('meta[name=description]').content,
+    'h-nuit': ' · bonne heure pour coder', 'h-jour': ' · ici, il fait toujours nuit',
+  };
+  document.querySelectorAll('[data-t]').forEach(el => { FR[el.dataset.t] = el.innerHTML; });
+  document.querySelectorAll('[data-ta]').forEach(el => { FR[el.dataset.ta] = el.getAttribute('aria-label'); });
+  let langue = 'fr', T = FR;
+
+  function choisitLangue() {
+    const url = new URLSearchParams(location.search).get('lang');
+    if (url === 'fr' || url === 'en') return url;
+    try { const l = localStorage.getItem('langue'); if (l === 'fr' || l === 'en') return l; } catch (e) {}
+    return (navigator.languages || [navigator.language || 'fr']).some(l => /^fr/i.test(l)) ? 'fr' : 'en';
+  }
+  function poseLangue(l) {
+    langue = l; T = l === 'en' ? EN : FR;
+    document.documentElement.lang = l;
+    document.title = T.titre;
+    document.querySelector('meta[name=description]').content = T.desc;
+    document.querySelectorAll('[data-t]').forEach(el => { el.innerHTML = T[el.dataset.t]; });
+    document.querySelectorAll('[data-ta]').forEach(el => { el.setAttribute('aria-label', T[el.dataset.ta]); });
+    document.getElementById('titre').setAttribute('aria-label', T['t-a'] + ' ' + T['t-b'] + '.');
+    document.querySelectorAll('.langues button').forEach(b => b.setAttribute('aria-pressed', b.dataset.l === l));
+    try { majHeure(); } catch (e) {}  // au premier appel, l'horloge n'existe pas encore
+  }
+  poseLangue(choisitLangue());
+
   /* ---------- Titre tapé au clavier ---------- */
   const titre = document.getElementById('titre');
+  const ta_ = titre.querySelector('.a'), tb_ = titre.querySelector('.b'), point = tb_.nextElementSibling;
+  const cur = '<span class="curseur"></span>';
+  let tape = null;
+  function titreFini() {
+    clearInterval(tape); tape = null;
+    titre.querySelectorAll('.curseur').forEach(c => c.remove());
+    ta_.textContent = T['t-a']; tb_.textContent = T['t-b']; point.style.visibility = '';
+    point.insertAdjacentHTML('afterend', cur);
+  }
   if (!calme) {
     // Le texte entier reste en place (invisible) : la mise en page ne bouge pas pendant la frappe
-    const a = titre.querySelector('.a'), b = titre.querySelector('.b'), fin = titre.querySelector('.curseur');
-    const ta = a.textContent, tb = b.textContent, cache = s => `<span style="visibility:hidden">${s}</span>`;
-    const point = fin.previousElementSibling; point.style.visibility = 'hidden';
-    fin.remove();
-    const cur = '<span class="curseur"></span>';
+    const ta = ta_.textContent, tb = tb_.textContent, cache = s => `<span style="visibility:hidden">${s}</span>`;
+    point.style.visibility = 'hidden';
+    titre.querySelector('.curseur').remove();
     let i = 0;
-    const tape = setInterval(() => {
+    tape = setInterval(() => {
       i++;
       const na = Math.min(i, ta.length), nb = Math.max(0, i - ta.length);
-      a.innerHTML = ta.slice(0, na) + (na < ta.length ? cur + cache(ta.slice(na)) : '');
-      b.innerHTML = tb.slice(0, nb) + (na === ta.length ? cur : '') + cache(tb.slice(nb));
-      if (i >= ta.length + tb.length) { clearInterval(tape); b.textContent = tb; point.style.visibility = ''; titre.lastElementChild.insertAdjacentHTML('afterend', cur); }
+      ta_.innerHTML = ta.slice(0, na) + (na < ta.length ? cur + cache(ta.slice(na)) : '');
+      tb_.innerHTML = tb.slice(0, nb) + (na === ta.length ? cur : '') + cache(tb.slice(nb));
+      if (i >= ta.length + tb.length) titreFini();
     }, 45);
   }
+
+  document.querySelectorAll('.langues button').forEach(b => b.addEventListener('click', () => {
+    if (b.dataset.l === langue) return;
+    try { localStorage.setItem('langue', b.dataset.l); } catch (e) {}
+    const url = new URL(location.href);
+    if (url.searchParams.has('lang')) { url.searchParams.set('lang', b.dataset.l); history.replaceState(null, '', url); }
+    poseLangue(b.dataset.l);
+    titreFini();
+  }));
 
   /* ---------- Apparitions au défilement ---------- */
   // On observe la section, pas l'élément : un élément rogné à 0 n'est jamais « visible » pour l'observateur
@@ -341,7 +426,7 @@
   function majHeure() {
     const d = new Date(), h = d.getHours();
     const hh = String(h).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0');
-    heure.textContent = hh + (h >= 20 || h < 6 ? ' · bonne heure pour coder' : ' · ici, il fait toujours nuit');
+    heure.textContent = hh + T[h >= 20 || h < 6 ? 'h-nuit' : 'h-jour'];
   }
   majHeure(); setInterval(majHeure, 30000);
 
