@@ -33,7 +33,14 @@
   .page { max-width: 960px; margin: 0 auto; padding: 0 20px; }
   .mono { font-family: var(--mono); }
 
-  header { padding: 72px 0 56px; }
+  header { padding: 72px 0 56px; position: relative; }
+  .ciel { position: absolute; inset: 0; pointer-events: none; }
+  .ciel i { position: absolute; width: 4px; height: 4px; background: var(--papier); opacity: .35; animation: scintille 4s steps(2) infinite; }
+  .ciel i:nth-child(3n) { background: var(--violet); }
+  @keyframes scintille { 50% { opacity: .08; } }
+  .sur { font: 14px var(--mono); color: var(--gris); margin: 44px 0 0; }
+  .sur + h1 { margin-top: 12px; }
+  header > * { position: relative; }
   header .logo { width: min(440px, 88%); height: auto; display: block; }
   h1 { font-size: clamp(32px, 6vw, 52px); line-height: 1.1; margin: 44px 0 16px; font-weight: 700; letter-spacing: -0.02em; }
   h1 em { font-style: normal; color: var(--violet); }
@@ -75,14 +82,16 @@
 
   footer { padding: 40px 0 56px; border-top: 1px solid var(--encre-3); color: var(--gris); font: 14px var(--mono); display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: center; }
   footer img { width: 40px; height: auto; }
-  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
 </style>
 </head>
 <body>
 <div class="page">
 
 <header>
+  <div class="ciel" aria-hidden="true"><i style="left:62%;top:8%;animation-delay:1.3s"></i><i style="left:88%;top:22%;animation-delay:0.0s"></i><i style="left:74%;top:48%;animation-delay:2.6s"></i><i style="left:94%;top:64%;animation-delay:1.3s"></i><i style="left:56%;top:30%;animation-delay:0.0s"></i><i style="left:82%;top:80%;animation-delay:2.6s"></i><i style="left:68%;top:16%;animation-delay:1.3s"></i><i style="left:97%;top:38%;animation-delay:0.0s"></i></div>
   <img class="logo" src="img/logo-complet.svg" alt="Nitocode" width="1080" height="212">
+  <p class="sur">// night code</p>
   <h1>J'expérimente pour moi,<br><em>tout le monde en profite</em>.</h1>
   <p class="chapo">Salut, moi c'est Nitocode. Dev le jour, le soir je pars de mes propres problèmes (comme une soirée entre amis sans bon jeu à plusieurs) et j'expérimente jusqu'à trouver une solution. Elle me sert d'abord, puis je la rends gratuite et sans pub pour tout le monde, et je raconte comment c'est fait.</p>
   <div class="boutons">
@@ -128,7 +137,7 @@
       <a class="btn" href="https://x.com/nitocode">Suivre @nitocode</a>
     </div>
     <div class="terminal" aria-label="La règle de travail">
-      <div><span class="v">$</span> <b>nitocode --regles</b></div>
+      <div><span class="v">nitocode@nuit:~$</span> <b>cat regles.txt</b></div>
       <div>partir de mes vrais problèmes</div>
       <div>expérimenter, même si ça rate</div>
       <div>ce qui marche : gratuit, sans pub</div>
@@ -140,7 +149,7 @@
 <section id="soutenir">
   <h2>soutenir</h2>
   <div class="soutien">
-    <p>Tout ce qui sort du labo est gratuit et le restera. Si Noubal ou Nitosouris t'a servi, un café sur Ko-fi aide à payer les serveurs et la prochaine expérience.</p>
+    <p>Tout ce qui sort du labo est gratuit et le restera. Si Noubal ou Nitosouris t'a servi, un café sur Ko-fi aide à payer les serveurs et à tenir les prochaines nuits de code.</p>
     <a class="btn plein" href="https://ko-fi.com/nitocode">Offrir un café ☕</a>
   </div>
 </section>
@@ -161,7 +170,7 @@
 
 <footer>
   <img src="img/logo-violet.svg" alt="" width="254" height="212">
-  <span>nitocode · expériences du soir</span>
+  <span>nitocode · codé la nuit, utile le jour</span>
 </footer>
 
 </div>
