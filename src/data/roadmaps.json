@@ -1,0 +1,364 @@
+{
+  "_readme": "Public roadmaps shown on nitocode.com. status: done | in-progress | upcoming. The hq evening sync only changes the status and when fields, based on commits. Titles, texts and order are edited by hand.",
+  "projects": [
+    {
+      "id": "noubal",
+      "name": "Noubal",
+      "color": "#FFC83D",
+      "icon": "bubble",
+      "url": "https://noubal.com",
+      "pitch": {
+        "fr": "Le quiz de soirée : un écran pour tous, chacun répond sur son téléphone.",
+        "en": "The party quiz: one screen for everyone, each player answers on their phone."
+      },
+      "milestones": [
+        {
+          "id": "real-time",
+          "status": "done",
+          "when": {
+            "fr": "été 2026",
+            "en": "summer 2026"
+          },
+          "title": {
+            "fr": "Le quiz en temps réel",
+            "en": "Real-time quiz"
+          },
+          "text": {
+            "fr": "Une room, un QR code sur la TV, et chacun rejoint depuis son téléphone avec un pseudo. Le point de départ : une soirée entre amis sans bon jeu à plusieurs.",
+            "en": "A room, a QR code on the TV, and everyone joins from their phone with a nickname. Where it started: a night with friends and no good multiplayer game."
+          }
+        },
+        {
+          "id": "themes",
+          "status": "done",
+          "when": {
+            "fr": "août 2026",
+            "en": "August 2026"
+          },
+          "title": {
+            "fr": "20+ thèmes et des milliers de questions",
+            "en": "20+ themes, thousands of questions"
+          },
+          "text": {
+            "fr": "Culture générale, cinéma, jeux vidéo, manga, histoire… plus des manches « Tu préfères », enchères, intrus et logique, en français et en anglais.",
+            "en": "General knowledge, movies, video games, manga, history… plus “Would you rather”, auction, odd-one-out and logic rounds, in French and English."
+          }
+        },
+        {
+          "id": "votes",
+          "status": "done",
+          "when": {
+            "fr": "septembre 2026",
+            "en": "September 2026"
+          },
+          "title": {
+            "fr": "Les joueurs notent les questions",
+            "en": "Players rate the questions"
+          },
+          "text": {
+            "fr": "Un pouce en l'air ou en bas après chaque réponse. Je reprends les questions les moins aimées avec l'IA : la banque s'améliore à chaque soirée.",
+            "en": "Thumbs up or down after each answer. I rework the least liked questions with AI: the bank gets better with every game night."
+          }
+        },
+        {
+          "id": "social-media",
+          "status": "done",
+          "when": {
+            "fr": "novembre 2026",
+            "en": "November 2026"
+          },
+          "title": {
+            "fr": "Les Insolites sur les réseaux",
+            "en": "“Les Insolites” on social media"
+          },
+          "text": {
+            "fr": "Une sitcom courte et des carrousels quiz sur Instagram et TikTok, fabriqués par un générateur maison et validés à la main avant publication.",
+            "en": "A short sitcom and quiz carousels on Instagram and TikTok, made by a home-made generator and checked by hand before posting."
+          }
+        },
+        {
+          "id": "support",
+          "status": "in-progress",
+          "when": {
+            "fr": "novembre 2026",
+            "en": "November 2026"
+          },
+          "title": {
+            "fr": "Soutenir Noubal",
+            "en": "Support Noubal"
+          },
+          "text": {
+            "fr": "Un bouton Ko-fi en fin de partie : les cafés paient les serveurs et les prochaines questions.",
+            "en": "A Ko-fi button at the end of each game: coffees pay for the servers and the next questions."
+          }
+        },
+        {
+          "id": "community",
+          "status": "upcoming",
+          "when": {
+            "fr": "prochainement",
+            "en": "coming soon"
+          },
+          "title": {
+            "fr": "Vos idées sur le Discord",
+            "en": "Your ideas on Discord"
+          },
+          "text": {
+            "fr": "Des salons pour proposer des thèmes, des questions et des modes de jeu, et suivre les nouveautés.",
+            "en": "Channels to suggest themes, questions and game modes, and to follow what's new."
+          }
+        },
+        {
+          "id": "studio",
+          "status": "upcoming",
+          "when": {
+            "fr": "plus tard",
+            "en": "later"
+          },
+          "title": {
+            "fr": "Le Studio, refait",
+            "en": "The Studio, rebuilt"
+          },
+          "text": {
+            "fr": "Créer ses propres questions et ses propres parties, pour une soirée sur mesure.",
+            "en": "Create your own questions and games, for a tailor-made game night."
+          }
+        },
+        {
+          "id": "mobile-app",
+          "status": "upcoming",
+          "when": {
+            "fr": "plus tard",
+            "en": "later"
+          },
+          "title": {
+            "fr": "L'application mobile",
+            "en": "The mobile app"
+          },
+          "text": {
+            "fr": "Noubal dans les stores, pour lancer une partie en un geste.",
+            "en": "Noubal in the app stores, to start a game in one tap."
+          }
+        }
+      ]
+    },
+    {
+      "id": "nitosouris",
+      "name": "Nitosouris",
+      "color": "#4FD1C5",
+      "icon": "mouse",
+      "url": "https://nitosouris.com",
+      "pitch": {
+        "fr": "Progresser aux jeux vidéo, directement dans le navigateur, qu'on soit novice ou déjà gamer.",
+        "en": "Get better at video games, right in the browser, whether you're a beginner or already a gamer."
+      },
+      "milestones": [
+        {
+          "id": "v1",
+          "status": "done",
+          "when": {
+            "fr": "2025",
+            "en": "2025"
+          },
+          "title": {
+            "fr": "Première version en ligne",
+            "en": "First version online"
+          },
+          "text": {
+            "fr": "Des mini-jeux pour travailler la souris et les réflexes, sans rien installer.",
+            "en": "Mini-games to train your mouse skills and reflexes, nothing to install."
+          }
+        },
+        {
+          "id": "racing",
+          "status": "in-progress",
+          "when": {
+            "fr": "novembre 2026",
+            "en": "November 2026"
+          },
+          "title": {
+            "fr": "La course et l'école de drift",
+            "en": "Racing and drift school"
+          },
+          "text": {
+            "fr": "Des circuits vus de dessus, une caméra de poursuite et un vrai kart, pour apprendre à prendre un virage comme dans les jeux de course.",
+            "en": "Top-down tracks, a chase camera and a real kart, to learn cornering like in racing games."
+          }
+        },
+        {
+          "id": "skill-tree",
+          "status": "in-progress",
+          "when": {
+            "fr": "novembre 2026",
+            "en": "November 2026"
+          },
+          "title": {
+            "fr": "L'arbre de progression",
+            "en": "The skill tree"
+          },
+          "text": {
+            "fr": "Un chemin clair de compétence en compétence, avec un seul objectif affiché à la fois.",
+            "en": "A clear path from skill to skill, with a single goal shown at a time."
+          }
+        },
+        {
+          "id": "rebuild-live",
+          "status": "upcoming",
+          "when": {
+            "fr": "prochainement",
+            "en": "coming soon"
+          },
+          "title": {
+            "fr": "La refonte en ligne",
+            "en": "The rebuild goes live"
+          },
+          "text": {
+            "fr": "Toute la nouvelle version, accessibilité comprise, remplace l'ancienne.",
+            "en": "The whole new version, accessibility included, replaces the old one."
+          }
+        },
+        {
+          "id": "community",
+          "status": "upcoming",
+          "when": {
+            "fr": "plus tard",
+            "en": "later"
+          },
+          "title": {
+            "fr": "Une roadmap construite avec vous",
+            "en": "A roadmap built with you"
+          },
+          "text": {
+            "fr": "Les idées de la communauté Discord deviennent des jalons de cette carte.",
+            "en": "Ideas from the Discord community become milestones on this map."
+          }
+        },
+        {
+          "id": "story",
+          "status": "upcoming",
+          "when": {
+            "fr": "plus tard",
+            "en": "later"
+          },
+          "title": {
+            "fr": "L'histoire de Nitosouris",
+            "en": "The Nitosouris story"
+          },
+          "text": {
+            "fr": "Un univers à lui, avec ses personnages, qui deviendra un récit en anime ou en webtoon.",
+            "en": "A world of its own, with its characters, to become an anime or webtoon story."
+          }
+        }
+      ]
+    },
+    {
+      "id": "nitocode",
+      "name": "Nitocode",
+      "color": "#9B7BFF",
+      "icon": "moon",
+      "url": "https://nitocode.com",
+      "pitch": {
+        "fr": "Les coulisses : comment je fais tourner tout ça avec quelques heures par semaine.",
+        "en": "Behind the scenes: how I run all this with a few hours a week."
+      },
+      "milestones": [
+        {
+          "id": "hq",
+          "status": "done",
+          "when": {
+            "fr": "novembre 2026",
+            "en": "November 2026"
+          },
+          "title": {
+            "fr": "Le QG de pilotage",
+            "en": "The control room"
+          },
+          "text": {
+            "fr": "Un brief chaque matin sur Discord avec une seule tâche de 25 minutes, une synchro chaque soir et une revue le dimanche, tenus par des routines IA.",
+            "en": "A brief every morning on Discord with a single 25-minute task, a sync every evening and a review on Sundays, run by AI routines."
+          }
+        },
+        {
+          "id": "brand",
+          "status": "done",
+          "when": {
+            "fr": "novembre 2026",
+            "en": "November 2026"
+          },
+          "title": {
+            "fr": "L'identité et nitocode.com",
+            "en": "The brand and nitocode.com"
+          },
+          "text": {
+            "fr": "Le logo <n/> en pixels, la nuit violette et ce site, en français et en anglais.",
+            "en": "The pixel <n/> logo, the purple night and this site, in French and English."
+          }
+        },
+        {
+          "id": "public-pages",
+          "status": "in-progress",
+          "when": {
+            "fr": "novembre 2026",
+            "en": "November 2026"
+          },
+          "title": {
+            "fr": "Roadmaps et workflows publics",
+            "en": "Public roadmaps and workflows"
+          },
+          "text": {
+            "fr": "Ces pages : où en est chaque projet, et comment chaque chose est fabriquée.",
+            "en": "These pages: where each project stands, and how each thing gets made."
+          }
+        },
+        {
+          "id": "carousels",
+          "status": "in-progress",
+          "when": {
+            "fr": "novembre 2026",
+            "en": "November 2026"
+          },
+          "title": {
+            "fr": "Les carrousels Nitocode",
+            "en": "Nitocode carousels"
+          },
+          "text": {
+            "fr": "Coulisses, astuces IA et bilans en slides, sur Instagram @nito.code.",
+            "en": "Behind the scenes, AI tips and recaps as slides, on Instagram @nito.code."
+          }
+        },
+        {
+          "id": "x-thread",
+          "status": "upcoming",
+          "when": {
+            "fr": "chaque semaine",
+            "en": "every week"
+          },
+          "title": {
+            "fr": "Un fil X par semaine",
+            "en": "A weekly X thread"
+          },
+          "text": {
+            "fr": "Le bilan de la semaine en build in public : ce qui a marché, ce qui a raté.",
+            "en": "The weekly recap, built in public: what worked, what failed."
+          }
+        },
+        {
+          "id": "dashboard",
+          "status": "upcoming",
+          "when": {
+            "fr": "début 2027",
+            "en": "early 2027"
+          },
+          "title": {
+            "fr": "Le tableau de bord public",
+            "en": "The public dashboard"
+          },
+          "text": {
+            "fr": "Les chiffres des projets, générés automatiquement depuis le QG.",
+            "en": "The projects' numbers, generated automatically from the control room."
+          }
+        }
+      ]
+    }
+  ]
+}
