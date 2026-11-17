@@ -65,15 +65,6 @@
         <a class="btn" href="https://ko-fi.com/nitocode" target="_blank" rel="noopener">{{ t(T.coffee) }}<span class="sr-only">{{ t(NEW_TAB) }}</span></a>
       </div>
     </section>
-
-    <section id="socials">
-      <h2 class="reveal"><span class="prompt">&gt;</span> {{ t(T.socials) }}</h2>
-      <ul class="menu">
-        <li v-for="s in SOCIALS" :key="s.url">
-          <a :href="s.url" target="_blank" rel="noopener"><span class="name">{{ s.name }}</span><span class="dots"></span><span class="handle">{{ t(s.handle) }}</span><span class="sr-only">{{ t(NEW_TAB) }}</span></a>
-        </li>
-      </ul>
-    </section>
   </main>
   <SiteFooter />
 </template>
@@ -116,7 +107,6 @@ const T = {
     en: 'What comes out of the lab is meant to be shared. If Noubal or Nitosouris helped you, a coffee on Ko-fi helps pay for the servers and fuels the next nights of code. Above all, it proves to my loved ones that coding at night at least pays for the coffee.',
   },
   coffee: { fr: 'Offrir un café', en: 'Buy me a coffee' },
-  socials: { fr: 'Réseaux', en: 'Socials' },
 }
 
 const EXPERIMENTS = [
@@ -154,22 +144,10 @@ const EXPERIMENTS = [
   },
 ]
 
-const SOCIALS = [
-  { name: 'Nitocode · X', url: 'https://x.com/nitocode', handle: '@nitocode' },
-  { name: 'Nitocode · Instagram', url: 'https://www.instagram.com/nito.code', handle: '@nito.code' },
-  { name: 'GitHub', url: 'https://github.com/nitocode', handle: 'nitocode' },
-  { name: 'Noubal · X', url: 'https://x.com/noubal_quiz', handle: '@noubal_quiz' },
-  { name: 'Noubal · Instagram', url: 'https://www.instagram.com/noubal', handle: '@noubal' },
-  { name: 'Noubal · TikTok', url: 'https://www.tiktok.com/@noubal.quiz', handle: '@noubal.quiz' },
-  { name: 'Noubal · Discord', url: 'https://discord.gg/mTu8AkUkkw', handle: { fr: 'rejoindre', en: 'join' } },
-  { name: 'Nitosouris · X', url: 'https://x.com/nitosouris', handle: '@nitosouris' },
-  { name: 'Ko-fi', url: 'https://ko-fi.com/nitocode', handle: 'nitocode' },
-]
-
 usePage({
   title: { fr: "Nitocode · j'expérimente pour moi, tout le monde en profite", en: 'Nitocode · I experiment for myself, and everyone benefits' },
   description: {
-    fr: "Nitocode : je pars de mes propres problèmes, j'expérimente le soir, et ce qui marche, je le partage pour que tout le monde en profite. Noubal, Nitosouris.",
+    fr: "Nitocode : je pars de mes propres problèmes, j'expérimente le soir, et ce qui marche, je le partage pour que tout le monde en profite. Noubal, Nitosouris, Nitofoot.",
     en: 'Nitocode: I start from my own problems, experiment at night, and what works, I share so everyone can benefit. Noubal, Nitosouris, Nitofoot.',
   },
   path: '/',
@@ -234,15 +212,5 @@ onBeforeUnmount(() => clearInterval(typing))
 .support-box .icon { width: 72px; }
 .support-box p { margin: 0; color: var(--paper); }
 @media (max-width: 640px) { .support-box { grid-template-columns: 1fr; } }
-
-/* ---------- Socials menu ---------- */
-.menu { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(380px, 100%), 1fr)); gap: 2px 40px; }
-.menu a { display: flex; align-items: baseline; gap: 10px; padding: 8px 4px; text-decoration: none; }
-.menu a::before { content: "▶"; color: var(--purple); font-size: 13px; visibility: hidden; }
-.menu a:hover::before, .menu a:focus-visible::before { visibility: visible; animation: blink .5s steps(1) infinite; }
-.menu .name { white-space: nowrap; font-weight: 500; color: var(--paper); }
-.menu .dots { flex: 1; border-bottom: 3px dotted var(--panel-2); transform: translateY(-5px); }
-.menu .handle { color: var(--grey); font-family: var(--mono); }
-.menu a:hover .name { color: var(--purple); }
 
 </style>
