@@ -89,12 +89,6 @@ h3 { color: var(--paper); }
 .f2 { animation: blink 1.2s steps(1) infinite; animation-delay: -.6s; }
 
 /* ---------- Footer ---------- */
-footer { padding: 36px 0 48px; display: flex; flex-wrap: wrap; gap: 14px; align-items: center; justify-content: space-between; color: var(--grey); }
-footer .signature { display: flex; align-items: center; gap: 12px; }
-footer .signature .pixel-icon { width: 28px; }
-footer nav { display: flex; gap: 18px; }
-footer a { color: var(--grey); text-decoration: none; }
-footer a:hover { color: var(--purple); }
 
 /* ---------- "Who does it" dots (workflows) ---------- */
 .dot { display: inline-block; width: 14px; height: 14px; background: var(--auto); flex: none; }
