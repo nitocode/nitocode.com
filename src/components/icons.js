@@ -23,6 +23,13 @@ export const ICONS = {
     '....s...s...', '...s...s....', '....s...s...', '............', '#########...', '#mmmmmmm###.',
     '#mmmmmmm#.#.', '#mmmmmmm#.#.', '#mmmmmmm###.', '.#mmmmm#....', '..#####.....', '############',
   ]] },
+  ball: { palette: { '#': '#0F1115', w: '#F4F1EA', k: '#0F1115', g: '#A3E635' }, frames: [[
+    '....####....', '..##wwww##..', '.#wwwkkwww#.', '.#wwkkkkww#.', '#wwwwkkwwww#', '#kwwwwwwwwk#',
+    '#kkwwwwwwkk#', '#kwwwkkwwwk#', '.#wwkkkkww#.', '.#wwwkkwww#.', '..##wwww##..', 'gg..####..gg',
+  ], [
+    '....####....', '..##wwww##..', '.#wkkwwwww#.', '.#kkkkwwww#.', '#wwkkwwwkkw#', '#wwwwwwkkkk#',
+    '#wwwwwwwkkw#', '#kkwwwwwwww#', '.#kkwwwkkw#.', '.#wwwwkkkk#.', '..##wwwkk#..', 'gg..####..gg',
+  ]] },
   moon: { palette: { '#': '#9B7BFF' }, frames: [[
     '..###..', '.##....', '##.....', '##.....', '##.....', '.##....', '..###..',
   ]] },

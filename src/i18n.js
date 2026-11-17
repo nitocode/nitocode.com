@@ -4,6 +4,9 @@ import { ref } from 'vue'
 
 export const lang = ref('fr')
 
+/** Hidden text added to links that open a new tab (read by screen readers) */
+export const NEW_TAB = { fr: ' (nouvel onglet)', en: ' (new tab)' }
+
 /** Text in the current language: t({ fr: '…', en: '…' }) or t('already a string') */
 export function t(text) {
   if (text == null || typeof text === 'string') return text

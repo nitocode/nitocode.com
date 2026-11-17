@@ -3,7 +3,7 @@
     <template #kicker><RouterLink to="/">nitocode</RouterLink> / <RouterLink to="/roadmaps">roadmaps</RouterLink> / {{ project.id }}</template>
     {{ t(project.pitch) }}
   </PageHeader>
-  <main class="page">
+  <main id="main" class="page" tabindex="-1">
     <section>
       <div class="map-header reveal">
         <ProgressBar :project="project" />
@@ -13,10 +13,10 @@
           <li><span class="sq upcoming"></span>{{ t({ fr: 'à venir', en: 'coming up' }) }}</li>
         </ul>
       </div>
-      <p class="hint">{{ t({ fr: 'Survole ou touche un niveau pour lire le détail.', en: 'Hover or tap a level to read the details.' }) }}</p>
+      <p class="hint">{{ t({ fr: 'Survole, touche ou sélectionne au clavier (Tab) un niveau pour lire le détail.', en: 'Hover, tap or tab to a level to read the details.' }) }}</p>
       <LevelMap :project="project" />
       <div class="buttons">
-        <a class="btn" :href="project.url" target="_blank" rel="noopener">{{ project.url.replace('https://', '') }}</a>
+        <a v-if="project.url" class="btn" :href="project.url" target="_blank" rel="noopener">{{ project.url.replace('https://', '') }}<span class="sr-only">{{ t(NEW_TAB) }}</span></a>
         <RouterLink class="btn outline" to="/roadmaps">{{ t({ fr: 'Les autres roadmaps', en: 'Other roadmaps' }) }}</RouterLink>
       </div>
     </section>
@@ -31,7 +31,7 @@ import SiteFooter from '../components/SiteFooter.vue'
 import LevelMap from '../components/LevelMap.vue'
 import ProgressBar from '../components/ProgressBar.vue'
 import roadmaps from '../data/roadmaps.json'
-import { t } from '../i18n.js'
+import { t, NEW_TAB } from '../i18n.js'
 import { usePage } from '../head.js'
 import { useReveal } from '../reveal.js'
 

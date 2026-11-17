@@ -11,7 +11,7 @@
         <template #tip>
           <strong>{{ i + 1 }}. {{ t(s.title) }}</strong>
           <p>{{ t(s.text) }}</p>
-          <span class="meta">{{ s.tool }}<template v-if="s.duration"> · {{ t(s.duration) }}</template></span>
+          <span class="meta">{{ t(s.tool) }}<template v-if="s.duration"> · {{ t(s.duration) }}</template></span>
         </template>
       </Tooltip>
     </li>

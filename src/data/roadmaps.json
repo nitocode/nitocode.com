@@ -252,6 +252,147 @@
       ]
     },
     {
+      "id": "nitofoot",
+      "name": "Nitofoot",
+      "color": "#A3E635",
+      "icon": "ball",
+      "url": null,
+      "pitch": {
+        "fr": "Des stats de pro pour le foot à 5 entre amis : deux caméras, un script qui tourne sur mon PC, et chaque joueur repart avec ses chiffres.",
+        "en": "Pro-style stats for 5-a-side with friends: two cameras, a script running on my PC, and every player leaves with their numbers."
+      },
+      "milestones": [
+        {
+          "id": "setup",
+          "status": "in-progress",
+          "when": {
+            "fr": "novembre 2026",
+            "en": "November 2026"
+          },
+          "title": {
+            "fr": "Le tournage",
+            "en": "The filming setup"
+          },
+          "text": {
+            "fr": "Deux caméras d'action (DJI Osmo Action et GoPro) fixées en hauteur dans deux coins opposés, en 720p. Premier test : un extrait de 5 minutes.",
+            "en": "Two action cameras (DJI Osmo Action and GoPro) mounted high in two opposite corners, in 720p. First test: a 5-minute clip."
+          }
+        },
+        {
+          "id": "detect",
+          "status": "upcoming",
+          "when": {
+            "fr": "plus tard",
+            "en": "later"
+          },
+          "title": {
+            "fr": "Repérer joueurs et ballon",
+            "en": "Spotting players and the ball"
+          },
+          "text": {
+            "fr": "Un modèle de détection d'images tourne en local sur la carte graphique du PC (RTX 4070) : pas d'envoi de vidéo, pas d'abonnement.",
+            "en": "An image detection model runs locally on the PC's graphics card (RTX 4070): no video upload, no subscription."
+          }
+        },
+        {
+          "id": "track",
+          "status": "upcoming",
+          "when": {
+            "fr": "plus tard",
+            "en": "later"
+          },
+          "title": {
+            "fr": "Suivre chaque joueur",
+            "en": "Following each player"
+          },
+          "text": {
+            "fr": "Garder la même identité pour chaque joueur pendant tout le match, avec ou sans chasubles. On nomme chacun une seule fois au début.",
+            "en": "Keep each player's identity for the whole match, with or without bibs. Everyone is named once at the start."
+          }
+        },
+        {
+          "id": "pitch-map",
+          "status": "upcoming",
+          "when": {
+            "fr": "plus tard",
+            "en": "later"
+          },
+          "title": {
+            "fr": "Le terrain vu du dessus",
+            "en": "The pitch from above"
+          },
+          "text": {
+            "fr": "Passer de l'image au terrain en mètres : distance parcourue, vitesse de pointe et carte de chaleur de chaque joueur.",
+            "en": "Go from the image to the pitch in metres: distance covered, top speed and a heatmap for each player."
+          }
+        },
+        {
+          "id": "two-cameras",
+          "status": "upcoming",
+          "when": {
+            "fr": "plus tard",
+            "en": "later"
+          },
+          "title": {
+            "fr": "Fusionner les deux angles",
+            "en": "Merging both angles"
+          },
+          "text": {
+            "fr": "Synchroniser les deux vidéos et croiser les points de vue, pour ne plus perdre un joueur caché derrière un autre.",
+            "en": "Sync both videos and combine the viewpoints, so a player hidden behind another is never lost."
+          }
+        },
+        {
+          "id": "actions",
+          "status": "upcoming",
+          "when": {
+            "fr": "plus tard",
+            "en": "later"
+          },
+          "title": {
+            "fr": "Reconnaître les actions",
+            "en": "Recognising actions"
+          },
+          "text": {
+            "fr": "Passes, tirs, buts, interceptions, arrêts du gardien : qui a fait quoi, et à quel moment du match.",
+            "en": "Passes, shots, goals, interceptions, saves: who did what, and when in the match."
+          }
+        },
+        {
+          "id": "stats-json",
+          "status": "upcoming",
+          "when": {
+            "fr": "plus tard",
+            "en": "later"
+          },
+          "title": {
+            "fr": "Le fichier de stats",
+            "en": "The stats file"
+          },
+          "text": {
+            "fr": "Un fichier JSON par match, au format ouvert et documenté, que n'importe quelle app de foot peut lire.",
+            "en": "One JSON file per match, in an open and documented format that any football app can read."
+          }
+        },
+        {
+          "id": "apps",
+          "status": "upcoming",
+          "when": {
+            "fr": "plus tard",
+            "en": "later"
+          },
+          "title": {
+            "fr": "Brancher les apps de foot",
+            "en": "Plugging into football apps"
+          },
+          "text": {
+            "fr": "Par exemple l'app d'un ami où l'on note buteurs, passeurs et badges en fin de match : les stats arriveraient toutes seules.",
+            "en": "For example a friend's app where we log scorers, assists and end-of-match badges: the stats would fill in by themselves."
+          }
+        }
+      ]
+    },
+    {
       "id": "nitocode",
       "name": "Nitocode",
       "color": "#9B7BFF",

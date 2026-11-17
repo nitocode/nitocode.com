@@ -3,16 +3,16 @@
     <template #kicker><RouterLink to="/">nitocode</RouterLink> / <RouterLink to="/workflows">workflows</RouterLink> / {{ workflow.id }}</template>
     {{ t(workflow.summary) }}
   </PageHeader>
-  <main class="page">
+  <main id="main" class="page" tabindex="-1">
     <section>
-      <p class="hint">{{ t({ fr: 'Survole ou touche une étape pour lire le détail.', en: 'Hover or tap a step to read the details.' }) }}</p>
+      <p class="hint">{{ t({ fr: 'Survole, touche ou sélectionne au clavier (Tab) une étape pour lire le détail.', en: 'Hover, tap or tab to a step to read the details.' }) }}</p>
       <WorkflowDiagram :workflow="workflow" />
       <details class="walkthrough">
         <summary>{{ t({ fr: 'Tout lire étape par étape', en: 'Read it all step by step' }) }}</summary>
         <ol>
           <li v-for="(s, i) in workflow.steps" :key="i" :class="s.who">
             <span class="dot"></span>
-            <div><strong>{{ t(s.title) }}</strong> <em>({{ t(WHO[s.who]) }} · {{ s.tool }})</em><br>{{ t(s.text) }}</div>
+            <div><strong>{{ t(s.title) }}</strong> <em>({{ t(WHO[s.who]) }} · {{ t(s.tool) }})</em><br>{{ t(s.text) }}</div>
           </li>
         </ol>
       </details>

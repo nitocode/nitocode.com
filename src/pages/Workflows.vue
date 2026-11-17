@@ -3,7 +3,7 @@
     <template #kicker><RouterLink to="/">nitocode</RouterLink> / workflows</template>
     {{ t({ fr: 'Comment chaque chose est fabriquée avec quelques heures par semaine : ce que je fais, ce que fait l’IA, et ce qui tourne tout seul.', en: 'How each thing gets made with a few hours a week: what I do, what AI does, and what runs on its own.' }) }}
   </PageHeader>
-  <main class="page">
+  <main id="main" class="page" tabindex="-1">
     <section>
       <ul class="who-legend reveal">
         <li v-for="(label, key) in WHO" :key="key" :class="key"><span class="dot"></span><strong>{{ t(label) }}</strong> {{ t(EXPLAIN[key]) }}</li>
