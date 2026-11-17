@@ -3,7 +3,7 @@
   <div class="page">
     <footer>
       <span class="signature"><PixelIcon name="moon" />{{ t({ fr: 'codé la nuit, utile le jour', en: 'coded at night, useful by day' }) }}</span>
-      <nav>
+      <nav :aria-label="t({ fr: 'Pied de page', en: 'Footer' })">
         <RouterLink to="/">nitocode.com</RouterLink>
         <RouterLink to="/roadmaps">Roadmaps</RouterLink>
         <RouterLink to="/workflows">Workflows</RouterLink>

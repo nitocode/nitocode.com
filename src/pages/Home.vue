@@ -12,13 +12,13 @@
       <p class="lead">{{ t(T.lead) }}</p>
       <div class="buttons">
         <a class="btn" href="#experiments">{{ t(T.see) }}</a>
-        <a class="btn outline" href="https://ko-fi.com/nitocode" target="_blank" rel="noopener">{{ t(T.kofi) }}</a>
+        <a class="btn outline" href="https://ko-fi.com/nitocode" target="_blank" rel="noopener">{{ t(T.kofi) }}<span class="sr-only">{{ t(NEW_TAB) }}</span></a>
       </div>
     </div>
   </header>
   <div class="dither"></div>
 
-  <main class="page">
+  <main id="main" class="page" tabindex="-1">
     <section id="experiments">
       <h2 class="reveal"><span class="prompt">&gt;</span> {{ t(T.experiments) }}</h2>
       <div class="cartridges">
@@ -33,7 +33,7 @@
             <p>{{ t(x.text) }}</p>
             <ul><li v-for="(p, i) in x.points" :key="i">{{ t(p) }}</li></ul>
             <div class="links">
-              <a class="link" :href="x.url" target="_blank" rel="noopener">{{ t(x.cta) }}</a>
+              <a v-if="x.url" class="link" :href="x.url" target="_blank" rel="noopener">{{ t(x.cta) }}<span class="sr-only">{{ t(NEW_TAB) }}</span></a>
               <RouterLink class="link secondary" :to="`/roadmaps/${x.id}`">Roadmap</RouterLink>
             </div>
             <div class="grooves"></div>
@@ -50,17 +50,10 @@
           <p>{{ t(T.lab2) }}</p>
           <div class="buttons tight">
             <RouterLink class="btn" to="/workflows">{{ t(T.seeWorkflows) }}</RouterLink>
-            <a class="btn outline" href="https://x.com/nitocode" target="_blank" rel="noopener">{{ t(T.follow) }}</a>
+            <a class="btn outline" href="https://x.com/nitocode" target="_blank" rel="noopener">{{ t(T.follow) }}<span class="sr-only">{{ t(NEW_TAB) }}</span></a>
           </div>
         </div>
-        <div ref="terminal" class="terminal reveal" role="group" :aria-label="t(T.rules)">
-          <div class="bar"><span>{{ t(T.file) }}</span><span>{{ clock }}</span></div>
-          <div class="body">
-            <div class="line" style="--i:0"><span class="accent">nitocode@nuit:~$</span> <b>cat {{ t(T.file) }}</b></div>
-            <div v-for="(r, i) in RULES" :key="i" class="line" :style="{ '--i': i + 1 }">{{ i + 1 }}. {{ t(r) }}</div>
-            <div class="line end" :style="{ '--i': RULES.length + 1 }"><span class="accent">nitocode@nuit:~$</span> </div>
-          </div>
-        </div>
+        <LabTerminal />
       </div>
     </section>
 
@@ -69,7 +62,7 @@
       <div class="support-box reveal">
         <PixelIcon name="coffee" class="icon" />
         <p>{{ t(T.donate) }}</p>
-        <a class="btn" href="https://ko-fi.com/nitocode" target="_blank" rel="noopener">{{ t(T.coffee) }}</a>
+        <a class="btn" href="https://ko-fi.com/nitocode" target="_blank" rel="noopener">{{ t(T.coffee) }}<span class="sr-only">{{ t(NEW_TAB) }}</span></a>
       </div>
     </section>
 
@@ -77,7 +70,7 @@
       <h2 class="reveal"><span class="prompt">&gt;</span> {{ t(T.socials) }}</h2>
       <ul class="menu">
         <li v-for="s in SOCIALS" :key="s.url">
-          <a :href="s.url" target="_blank" rel="noopener"><span class="name">{{ s.name }}</span><span class="dots"></span><span class="handle">{{ t(s.handle) }}</span></a>
+          <a :href="s.url" target="_blank" rel="noopener"><span class="name">{{ s.name }}</span><span class="dots"></span><span class="handle">{{ t(s.handle) }}</span><span class="sr-only">{{ t(NEW_TAB) }}</span></a>
         </li>
       </ul>
     </section>
@@ -91,7 +84,8 @@ import NightSky from '../components/NightSky.vue'
 import TopBar from '../components/TopBar.vue'
 import PixelIcon from '../components/PixelIcon.vue'
 import SiteFooter from '../components/SiteFooter.vue'
-import { lang, t } from '../i18n.js'
+import LabTerminal from '../components/LabTerminal.vue'
+import { lang, t, NEW_TAB } from '../i18n.js'
 import { useReveal } from '../reveal.js'
 import { usePage } from '../head.js'
 
@@ -116,8 +110,6 @@ const T = {
   },
   seeWorkflows: { fr: 'Voir les workflows', en: 'See the workflows' },
   follow: { fr: 'Suivre @nitocode', en: 'Follow @nitocode' },
-  rules: { fr: 'Les règles du labo', en: 'The lab rules' },
-  file: { fr: 'regles.txt', en: 'rules.txt' },
   support: { fr: 'Soutenir', en: 'Support' },
   donate: {
     fr: "Ce qui sort du labo est fait pour être partagé. Si Noubal ou Nitosouris t'a servi, un café sur Ko-fi aide à payer les serveurs et à tenir les prochaines nuits de code. Et surtout, il prouve à mes proches que coder la nuit, ça paie au moins les cafés.",
@@ -125,8 +117,6 @@ const T = {
   },
   coffee: { fr: 'Offrir un café', en: 'Buy me a coffee' },
   socials: { fr: 'Réseaux', en: 'Socials' },
-  night: { fr: ' · bonne heure pour coder', en: ' · good time to code' },
-  day: { fr: ' · ici, il fait toujours nuit', en: " · here, it's always night" },
 }
 
 const EXPERIMENTS = [
@@ -152,13 +142,16 @@ const EXPERIMENTS = [
     ],
     cta: { fr: 'Essayer nitosouris.com', en: 'Try nitosouris.com' },
   },
-]
-
-const RULES = [
-  { fr: 'partir de mes vrais problèmes', en: 'start from my real problems' },
-  { fr: 'expérimenter, même si ça rate', en: 'experiment, even if it fails' },
-  { fr: 'ce qui marche : je le partage', en: 'what works: I share it' },
-  { fr: "raconter ce que j'apprends", en: 'tell what I learn' },
+  {
+    id: 'nitofoot', num: 'EXP_03', name: 'Nitofoot', color: '#A3E635', icon: 'ball', url: null,
+    tag: { fr: 'stats de foot à 5, analysées sur mon PC', en: '5-a-side stats, analysed on my PC' },
+    text: { fr: 'Les pros ont des capteurs pour mesurer chaque course. Nous, au five entre amis, on n’a rien : je filme, un script analyse.', en: 'Pros have trackers to measure every run. We, playing 5-a-side with friends, have nothing: I film, a script analyses.' },
+    points: [
+      { fr: 'Deux caméras en hauteur, aucun capteur sur les joueurs', en: 'Two cameras up high, no tracker on the players' },
+      { fr: 'Distance, passes, buts, arrêts : tout tourne en local sur ma carte graphique', en: 'Distance, passes, goals, saves: it all runs locally on my graphics card' },
+      { fr: 'Un fichier de stats ouvert, prêt pour les apps de foot', en: 'An open stats file, ready for football apps' },
+    ],
+  },
 ]
 
 const SOCIALS = [
@@ -177,7 +170,7 @@ usePage({
   title: { fr: "Nitocode · j'expérimente pour moi, tout le monde en profite", en: 'Nitocode · I experiment for myself, and everyone benefits' },
   description: {
     fr: "Nitocode : je pars de mes propres problèmes, j'expérimente le soir, et ce qui marche, je le partage pour que tout le monde en profite. Noubal, Nitosouris.",
-    en: 'Nitocode: I start from my own problems, experiment at night, and what works, I share so everyone can benefit. Noubal, Nitosouris.',
+    en: 'Nitocode: I start from my own problems, experiment at night, and what works, I share so everyone can benefit. Noubal, Nitosouris, Nitofoot.',
   },
   path: '/',
   full: true,
@@ -201,22 +194,7 @@ onMounted(() => {
 })
 watch(lang, () => { if (!finished.value) { clearInterval(typing); typed.value = Infinity } })
 
-/* ---------- Lab terminal: visitor's local time, lines printed one by one ---------- */
-const terminal = ref(null), now = ref(null)
-const clock = computed(() => {
-  const d = now.value
-  if (!d) return ''
-  const h = d.getHours()
-  return String(h).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0') + t(h >= 20 || h < 6 ? T.night : T.day)
-})
-let clockTimer, terminalObserver
-onMounted(() => {
-  now.value = new Date()
-  clockTimer = setInterval(() => (now.value = new Date()), 30000)
-  terminalObserver = new IntersectionObserver(([e]) => { if (e.isIntersecting) { terminal.value.classList.add('printing'); terminalObserver.disconnect() } })
-  terminalObserver.observe(terminal.value.closest('section'))
-})
-onBeforeUnmount(() => { clearInterval(typing); clearInterval(clockTimer); terminalObserver?.disconnect() })
+onBeforeUnmount(() => clearInterval(typing))
 </script>
 
 <style>
@@ -250,17 +228,6 @@ onBeforeUnmount(() => { clearInterval(typing); clearInterval(clockTimer); termin
 .two-cols p { margin: 0 0 16px; }
 .two-cols strong { color: var(--paper); font-weight: 400; background: var(--purple-dark); padding: 0 4px; }
 .buttons.tight { margin-top: 24px; }
-.terminal { background: #07080D; box-shadow: 0 0 0 4px var(--panel-2), 0 0 0 8px #000, 8px 8px 0 8px #000; font: 18px/1.5 var(--mono); color: #8BE9A8; position: relative; }
-.terminal::after { content: ""; position: absolute; inset: 0; pointer-events: none;
-                   background: repeating-linear-gradient(0deg, rgba(0,0,0,.28) 0 2px, transparent 2px 4px); }
-.terminal .bar { display: flex; justify-content: space-between; gap: 8px; background: var(--panel-2); color: var(--grey); padding: 4px 12px; font-size: 15px; }
-.terminal .body { padding: 14px 16px 18px; }
-.terminal .accent { color: var(--purple); }
-.terminal b { color: var(--paper); font-weight: 400; }
-.js .terminal .line { visibility: hidden; }
-.js .terminal.printing .line { animation: show 0s forwards; animation-delay: calc(var(--i) * .45s + .3s); }
-@keyframes show { to { visibility: visible; } }
-.terminal .end::after { content: "█"; animation: blink 1s steps(1) infinite; }
 
 /* ---------- Support ---------- */
 .support-box { display: grid; grid-template-columns: auto 1fr auto; gap: 28px; align-items: center; background: var(--panel); padding: 28px; box-shadow: 6px 6px 0 #000; }
@@ -278,5 +245,4 @@ onBeforeUnmount(() => { clearInterval(typing); clearInterval(clockTimer); termin
 .menu .handle { color: var(--grey); font-family: var(--mono); }
 .menu a:hover .name { color: var(--purple); }
 
-@media (prefers-reduced-motion: reduce) { .js .terminal .line { visibility: visible; } }
 </style>

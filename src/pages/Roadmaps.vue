@@ -3,7 +3,7 @@
     <template #kicker><RouterLink to="/">nitocode</RouterLink> / roadmaps</template>
     {{ t({ fr: 'Où en est chaque expérience : ce qui est fait, ce qui avance, ce qui arrive. Une carte par projet, un niveau par étape.', en: 'Where each experiment stands: what’s done, what’s moving, what’s next. One map per project, one level per milestone.' }) }}
   </PageHeader>
-  <main class="page">
+  <main id="main" class="page" tabindex="-1">
     <section>
       <div class="projects">
         <RouterLink v-for="p in roadmaps.projects" :key="p.id" :to="`/roadmaps/${p.id}`" class="project reveal" :style="{ '--c': p.color }">

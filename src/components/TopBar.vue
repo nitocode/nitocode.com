@@ -3,7 +3,7 @@
     <RouterLink v-if="!home" to="/" class="home-link" :aria-label="t({ fr: 'Accueil', en: 'Home' })">
       <img src="/img/logo-complet.svg" alt="Nitocode" width="1080" height="212">
     </RouterLink>
-    <nav class="nav" aria-label="Pages">
+    <nav class="nav" :aria-label="t({ fr: 'Navigation principale', en: 'Main navigation' })">
       <RouterLink to="/roadmaps" :class="{ active: route.path.startsWith('/roadmaps') }">Roadmaps</RouterLink>
       <RouterLink to="/workflows" :class="{ active: route.path.startsWith('/workflows') }">Workflows</RouterLink>
     </nav>
