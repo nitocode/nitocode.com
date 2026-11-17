@@ -4,8 +4,8 @@
 
 <script setup>
 import { onMounted } from 'vue'
-import { initLangue } from './i18n.js'
+import { initLang } from './i18n.js'
 
-// Le HTML pré-rendu est en français : on bascule dans la langue du visiteur seulement après l'hydratation
-onMounted(initLangue)
+// Pre-rendered HTML is French: switch to the visitor's language only after hydration
+onMounted(initLang)
 </script>

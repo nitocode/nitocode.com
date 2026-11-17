@@ -1,52 +1,52 @@
 <template>
-  <EnTete :titre="t(w.titre)">
-    <template #sur><RouterLink to="/">nitocode</RouterLink> / <RouterLink to="/workflows">workflows</RouterLink> / {{ w.id }}</template>
-    {{ t(w.resume) }}
-  </EnTete>
+  <PageHeader :title="t(workflow.title)">
+    <template #kicker><RouterLink to="/">nitocode</RouterLink> / <RouterLink to="/workflows">workflows</RouterLink> / {{ workflow.id }}</template>
+    {{ t(workflow.summary) }}
+  </PageHeader>
   <main class="page">
     <section>
-      <p class="astuce">{{ t({ fr: 'Survole ou touche une étape pour lire le détail.', en: 'Hover or tap a step to read the details.' }) }}</p>
-      <SchemaWorkflow :workflow="w" />
-      <details class="deroule">
+      <p class="hint">{{ t({ fr: 'Survole ou touche une étape pour lire le détail.', en: 'Hover or tap a step to read the details.' }) }}</p>
+      <WorkflowDiagram :workflow="workflow" />
+      <details class="walkthrough">
         <summary>{{ t({ fr: 'Tout lire étape par étape', en: 'Read it all step by step' }) }}</summary>
         <ol>
-          <li v-for="(e, i) in w.etapes" :key="i" :class="e.qui">
-            <span class="pastille"></span>
-            <div><strong>{{ t(e.titre) }}</strong> <em>({{ t(QUI[e.qui]) }} · {{ e.outil }})</em><br>{{ t(e.texte) }}</div>
+          <li v-for="(s, i) in workflow.steps" :key="i" :class="s.who">
+            <span class="dot"></span>
+            <div><strong>{{ t(s.title) }}</strong> <em>({{ t(WHO[s.who]) }} · {{ s.tool }})</em><br>{{ t(s.text) }}</div>
           </li>
         </ol>
       </details>
-      <div class="boutons">
-        <RouterLink v-if="suivant" class="btn" :to="`/workflows/${suivant.id}`">{{ t({ fr: 'Workflow suivant', en: 'Next workflow' }) }} : {{ t(suivant.titre) }}</RouterLink>
-        <RouterLink class="btn creux" to="/workflows">{{ t({ fr: 'Tous les workflows', en: 'All workflows' }) }}</RouterLink>
+      <div class="buttons">
+        <RouterLink v-if="next" class="btn" :to="`/workflows/${next.id}`">{{ t({ fr: 'Workflow suivant', en: 'Next workflow' }) }} : {{ t(next.title) }}</RouterLink>
+        <RouterLink class="btn outline" to="/workflows">{{ t({ fr: 'Tous les workflows', en: 'All workflows' }) }}</RouterLink>
       </div>
     </section>
   </main>
-  <PiedDePage />
+  <SiteFooter />
 </template>
 
 <script setup>
 import { computed } from 'vue'
-import EnTete from '../components/EnTete.vue'
-import PiedDePage from '../components/PiedDePage.vue'
-import SchemaWorkflow from '../components/SchemaWorkflow.vue'
-import { QUI, WORKFLOWS } from '../data/workflows.js'
+import PageHeader from '../components/PageHeader.vue'
+import SiteFooter from '../components/SiteFooter.vue'
+import WorkflowDiagram from '../components/WorkflowDiagram.vue'
+import { WHO, WORKFLOWS } from '../data/workflows.js'
 import { t } from '../i18n.js'
-import { usePage } from '../tete.js'
+import { usePage } from '../head.js'
 
 const props = defineProps({ id: { type: String, required: true } })
-const idx = computed(() => WORKFLOWS.findIndex(x => x.id === props.id))
-const w = computed(() => WORKFLOWS[idx.value])
-const suivant = computed(() => WORKFLOWS[(idx.value + 1) % WORKFLOWS.length])
-usePage({ titre: w.value.titre, description: w.value.resume, chemin: `/workflows/${props.id}/` })
+const index = computed(() => WORKFLOWS.findIndex(w => w.id === props.id))
+const workflow = computed(() => WORKFLOWS[index.value])
+const next = computed(() => WORKFLOWS[(index.value + 1) % WORKFLOWS.length])
+usePage({ title: workflow.value.title, description: workflow.value.summary, path: `/workflows/${props.id}/` })
 </script>
 
 <style>
-.deroule { margin: 44px 0 0; background: var(--bloc); padding: 16px 20px; box-shadow: 6px 6px 0 #000; }
-.deroule summary { cursor: pointer; font-weight: 500; color: var(--papier); }
-.deroule ol { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 16px; }
-.deroule li { display: flex; gap: 12px; align-items: flex-start; }
-.deroule li .pastille { margin-top: 6px; }
-.deroule strong { color: var(--papier); font-weight: 500; }
-.deroule em { color: var(--gris); font-style: normal; font-size: 15px; }
+.walkthrough { margin: 44px 0 0; background: var(--panel); padding: 16px 20px; box-shadow: 6px 6px 0 #000; }
+.walkthrough summary { cursor: pointer; font-weight: 500; color: var(--paper); }
+.walkthrough ol { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 16px; }
+.walkthrough li { display: flex; gap: 12px; align-items: flex-start; }
+.walkthrough li .dot { margin-top: 6px; }
+.walkthrough strong { color: var(--paper); font-weight: 500; }
+.walkthrough em { color: var(--grey); font-style: normal; font-size: 15px; }
 </style>

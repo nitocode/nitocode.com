@@ -1,26 +1,26 @@
-// Titre, description et aperçu de partage de chaque page (pré-rendus en français ; l'onglet suit la langue choisie)
+// Title, description and share preview of each page (pre-rendered in French; the tab title follows the chosen language)
 import { useHead } from '@unhead/vue'
-import { t, langue } from './i18n.js'
+import { t, lang } from './i18n.js'
 
 const SITE = 'https://nitocode.com'
 
-export function usePage({ titre, description, chemin, complet = false, image = '/img/og.png' }) {
-  const titreFinal = () => (complet ? t(titre) : `${t(titre)} · Nitocode`)
+export function usePage({ title, description, path, full = false, image = '/img/og.png' }) {
+  const fullTitle = () => (full ? t(title) : `${t(title)} · Nitocode`)
   useHead({
-    htmlAttrs: { lang: () => langue.value },
-    title: titreFinal,
+    htmlAttrs: { lang: () => lang.value },
+    title: fullTitle,
     meta: [
       { name: 'description', content: () => t(description) },
-      { property: 'og:title', content: titreFinal },
+      { property: 'og:title', content: fullTitle },
       { property: 'og:description', content: () => t(description) },
       { property: 'og:image', content: SITE + image },
       { property: 'og:image:width', content: '1200' },
       { property: 'og:image:height', content: '630' },
-      { property: 'og:url', content: SITE + chemin },
+      { property: 'og:url', content: SITE + path },
       { property: 'og:locale', content: 'fr_FR' },
       { property: 'og:locale:alternate', content: 'en_US' },
     ],
-    link: chemin === '/' ? [
+    link: path === '/' ? [
       { rel: 'alternate', hreflang: 'fr', href: SITE + '/' },
       { rel: 'alternate', hreflang: 'en', href: SITE + '/en/' },
     ] : [],

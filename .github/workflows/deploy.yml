@@ -1,5 +1,5 @@
-# Construit le site (Vue + pré-rendu) et le publie sur GitHub Pages à chaque push sur main.
-name: Déployer nitocode.com
+# Builds the site (Vue + pre-rendering) and publishes it to GitHub Pages on every push to main.
+name: Deploy nitocode.com
 on:
   push:
     branches: [main]

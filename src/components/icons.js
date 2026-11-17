@@ -1,113 +1,114 @@
-// Icônes pixel : une grille de caractères par image, une palette par icône.
-// Deux images = animation (elles alternent). « . » = transparent.
-export const ICONES = {
-  bulle: { pal: { '#': '#0F1115', y: '#FFF4D0', k: '#0F1115' }, images: [[
+// Pixel icons: one character grid per frame, one palette per icon.
+// Two frames = animation (they alternate). "." = transparent.
+// A copy lives in nitocode-hq/carousels/icons.js: keep both identical.
+export const ICONS = {
+  bubble: { palette: { '#': '#0F1115', y: '#FFF4D0', k: '#0F1115' }, frames: [[
     '..########..', '.#yyyyyyyy#.', '#yyyykkkyyy#', '#yyykyyykyy#', '#yyyyyykyyy#', '#yyyyykyyyy#',
     '#yyyyykyyyy#', '#yyyyyyyyyy#', '#yyyyykyyyy#', '.#yyyyyyyy#.', '..#y######..', '..##........',
   ], [
     '..########..', '.#yyyyyyyy#.', '#yyyyykyyyy#', '#yyyyykyyyy#', '#yyyyykyyyy#', '#yyyyykyyyy#',
     '#yyyyykyyyy#', '#yyyyyyyyyy#', '#yyyyykyyyy#', '.#yyyyyyyy#.', '..#y######..', '..##........',
   ]] },
-  souris: { pal: { '#': '#0F1115', t: '#E6FFFB', c: '#B5F1EA', b: '#B5F1EA', B: '#0F1115', '|': '#0F1115' }, images: [[
+  mouse: { palette: { '#': '#0F1115', t: '#E6FFFB', c: '#B5F1EA', b: '#B5F1EA', B: '#0F1115', '|': '#0F1115' }, frames: [[
     '.....|.....', '....|......', '.....|.....', '...#####...', '..#bb#cc#..', '.#bbb#ccc#.', '.#bbb#ccc#.', '.#########.',
     '.#ttttttt#.', '.#ttttttt#.', '.#ttttttt#.', '..#ttttt#..', '...#####...',
   ], [
     '.....|.....', '......|....', '.....|.....', '...#####...', '..#BB#cc#..', '.#BBB#ccc#.', '.#BBB#ccc#.', '.#########.',
     '.#ttttttt#.', '.#ttttttt#.', '.#ttttttt#.', '..#ttttt#..', '...#####...',
   ]] },
-  cafe: { pal: { '#': '#F4F1EA', m: '#9B7BFF', s: '#9DA1AA' }, images: [[
+  coffee: { palette: { '#': '#F4F1EA', m: '#9B7BFF', s: '#9DA1AA' }, frames: [[
     '...s...s....', '....s...s...', '...s...s....', '............', '#########...', '#mmmmmmm###.',
     '#mmmmmmm#.#.', '#mmmmmmm#.#.', '#mmmmmmm###.', '.#mmmmm#....', '..#####.....', '############',
   ], [
     '....s...s...', '...s...s....', '....s...s...', '............', '#########...', '#mmmmmmm###.',
     '#mmmmmmm#.#.', '#mmmmmmm#.#.', '#mmmmmmm###.', '.#mmmmm#....', '..#####.....', '############',
   ]] },
-  lune: { pal: { '#': '#9B7BFF' }, images: [[
+  moon: { palette: { '#': '#9B7BFF' }, frames: [[
     '..###..', '.##....', '##.....', '##.....', '##.....', '.##....', '..###..',
   ]] },
-  soleil: { pal: { y: '#FFC83D' }, images: [[
+  sun: { palette: { y: '#FFC83D' }, frames: [[
     '.....y.....', '.y...y...y.', '..y.....y..', '....yyy....', '...yyyyy...', 'yy.yyyyy.yy',
     '...yyyyy...', '....yyy....', '..y.....y..', '.y...y...y.', '.....y.....',
   ], [
     '...........', '.....y.....', '.y.......y.', '....yyy....', '...yyyyy...', '.y.yyyyy.y.',
     '...yyyyy...', '....yyy....', '.y.......y.', '.....y.....', '...........',
   ]] },
-  telephone: { pal: { '#': '#D9D6CE', s: '#9B7BFF', o: '#0F1115', S: '#4B3A99' }, images: [[
+  phone: { palette: { '#': '#D9D6CE', s: '#9B7BFF', o: '#0F1115', S: '#4B3A99' }, frames: [[
     '.########.', '.#ssssss#.', '.#ssssss#.', '.#ssssss#.', '.#ssssss#.', '.#ssssss#.', '.#ssssss#.',
     '.########.', '.###oo###.', '.########.',
   ], [
     '.########.', '.#SSSSSS#.', '.#ssssss#.', '.#ssssss#.', '.#ssssss#.', '.#ssssss#.', '.#ssssss#.',
     '.########.', '.###oo###.', '.########.',
   ]] },
-  robot: { pal: { '#': '#9B7BFF', a: '#F4F1EA', e: '#F4F1EA', k: '#0F1115' }, images: [[
+  robot: { palette: { '#': '#9B7BFF', a: '#F4F1EA', e: '#F4F1EA', k: '#0F1115' }, frames: [[
     '.....a.....', '....aaa....', '.#########.', '##ee###ee##', '##ee###ee##', '###########',
     '.##kkkkk##.', '.#########.',
   ], [
     '.....a.....', '....aaa....', '.#########.', '###########', '##ee###ee##', '###########',
     '.##kkkkk##.', '.#########.',
   ]] },
-  message: { pal: { '#': '#9B7BFF', p: '#1A1C28', k: '#F4F1EA' }, images: [[
+  message: { palette: { '#': '#9B7BFF', p: '#1A1C28', k: '#F4F1EA' }, frames: [[
     '.##########.', '#pppppppppp#', '#ppkppkppkp#', '#pppppppppp#', '.##########.', '..##........', '..#.........',
   ], [
     '.##########.', '#pppppppppp#', '#ppkppkpppp#', '#pppppppppp#', '.##########.', '..##........', '..#.........',
   ]] },
-  branche: { pal: { '#': '#9DA1AA', o: '#9B7BFF' }, images: [[
+  branch: { palette: { '#': '#9DA1AA', o: '#9B7BFF' }, frames: [[
     '.oo....oo.', '.oo....oo.', '..#....#..', '..#....#..', '..#...#...', '..#..#....', '..###.....',
     '..#.......', '..#.......', '.oo.......', '.oo.......',
   ]] },
-  coche: { pal: { '#': '#8BE9A8' }, images: [[
+  check: { palette: { '#': '#8BE9A8' }, frames: [[
     '.........##', '........##.', '.......##..', '##....##...', '.##..##....', '..####.....', '...##......',
   ]] },
-  fusee: { pal: { r: '#F4F1EA', w: '#9B7BFF', f: '#FFC83D' }, images: [[
+  rocket: { palette: { r: '#F4F1EA', w: '#9B7BFF', f: '#FFC83D' }, frames: [[
     '....r....', '...rrr...', '...rwr...', '...rrr...', '...rrr...', '..rrrrr..', '.r.rrr.r.', 'r..rrr..r',
     '....f....', '...fff...', '....f....',
   ], [
     '....r....', '...rrr...', '...rwr...', '...rrr...', '...rrr...', '..rrrrr..', '.r.rrr.r.', 'r..rrr..r',
     '...f.f...', '....f....', '.........',
   ]] },
-  personne: { pal: { '#': '#FFC83D' }, images: [[
+  person: { palette: { '#': '#FFC83D' }, frames: [[
     '...###...', '..#####..', '..#####..', '...###...', '.........', '.#######.', '#########', '#########',
   ]] },
-  video: { pal: { '#': '#9DA1AA', p: '#9B7BFF' }, images: [[
+  video: { palette: { '#': '#9DA1AA', p: '#9B7BFF' }, frames: [[
     '############', '#..........#', '#...p......#', '#...pp.....#', '#...ppp....#', '#...pp.....#',
     '#...p......#', '#..........#', '############',
   ]] },
-  carrousel: { pal: { '#': '#9DA1AA', y: '#FFC83D', m: '#9B7BFF' }, images: [[
+  carousel: { palette: { '#': '#9DA1AA', y: '#FFC83D', m: '#9B7BFF' }, frames: [[
     '...########', '...#......#', '########..#', '#......#..#', '#..y...#..#', '#.....m#..#',
     '#...mmm#..#', '#.mmmmm####', '#......#...', '########...',
   ]] },
-  horloge: { pal: { '#': '#9DA1AA', h: '#9B7BFF' }, images: [[
+  clock: { palette: { '#': '#9DA1AA', h: '#9B7BFF' }, frames: [[
     '...#####...', '..#.....#..', '.#...h...#.', '#....h....#', '#....h....#', '#....hhh..#',
     '#.........#', '.#.......#.', '..#.....#..', '...#####...',
   ]] },
-  document: { pal: { '#': '#F4F1EA', l: '#9B7BFF' }, images: [[
+  document: { palette: { '#': '#F4F1EA', l: '#9B7BFF' }, frames: [[
     '######...', '#....##..', '#....###.', '#.......#', '#.lllll.#', '#.......#', '#.llll..#',
     '#.......#', '#.lllll.#', '#.......#', '#########',
   ]] },
-  cadenas: { pal: { '#': '#9DA1AA' }, images: [[
+  lock: { palette: { '#': '#9DA1AA' }, frames: [[
     '..###..', '.#...#.', '.#...#.', '#######', '###.###', '###.###', '#######',
   ]] },
 }
 
-/** SVG d'une icône, en rectangles fusionnés par ligne */
-export function svgIcone(nom) {
-  const ic = ICONES[nom]
-  if (!ic) return ''
-  const w = ic.images[0][0].length, h = ic.images[0].length
-  const groupes = ic.images.map((img, n) => {
-    let r = ''
-    img.forEach((ligne, y) => {
+/** SVG markup of an icon, with runs of same-colour pixels merged into one rect per row */
+export function iconSvg(name) {
+  const icon = ICONS[name]
+  if (!icon) return ''
+  const w = icon.frames[0][0].length, h = icon.frames[0].length
+  const groups = icon.frames.map((frame, n) => {
+    let rects = ''
+    frame.forEach((row, y) => {
       let x = 0
       while (x < w) {
-        const c = ligne[x]
+        const c = row[x]
         if (c === '.' || c === undefined) { x++; continue }
-        let fin = x
-        while (fin < w && ligne[fin] === c) fin++
-        r += `<rect x="${x}" y="${y}" width="${fin - x}" height="1.02" fill="${ic.pal[c]}"/>`
-        x = fin
+        let end = x
+        while (end < w && row[end] === c) end++
+        rects += `<rect x="${x}" y="${y}" width="${end - x}" height="1.02" fill="${icon.palette[c]}"/>`
+        x = end
       }
     })
-    return ic.images.length > 1 ? `<g class="f${n + 1}">${r}</g>` : r
+    return icon.frames.length > 1 ? `<g class="f${n + 1}">${rects}</g>` : rects
   }).join('')
-  return `<svg viewBox="0 0 ${w} ${h}" shape-rendering="crispEdges" aria-hidden="true">${groupes}</svg>`
+  return `<svg viewBox="0 0 ${w} ${h}" shape-rendering="crispEdges" aria-hidden="true">${groups}</svg>`
 }
