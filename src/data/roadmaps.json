@@ -280,10 +280,10 @@
         },
         {
           "id": "detect",
-          "status": "upcoming",
+          "status": "in-progress",
           "when": {
-            "fr": "plus tard",
-            "en": "later"
+            "fr": "novembre 2026",
+            "en": "November 2026"
           },
           "title": {
             "fr": "Repérer joueurs et ballon",
@@ -296,10 +296,10 @@
         },
         {
           "id": "track",
-          "status": "upcoming",
+          "status": "in-progress",
           "when": {
-            "fr": "plus tard",
-            "en": "later"
+            "fr": "novembre 2026",
+            "en": "November 2026"
           },
           "title": {
             "fr": "Suivre chaque joueur",
@@ -312,10 +312,10 @@
         },
         {
           "id": "pitch-map",
-          "status": "upcoming",
+          "status": "in-progress",
           "when": {
-            "fr": "plus tard",
-            "en": "later"
+            "fr": "novembre 2026",
+            "en": "November 2026"
           },
           "title": {
             "fr": "Le terrain vu du dessus",
@@ -328,10 +328,10 @@
         },
         {
           "id": "two-cameras",
-          "status": "upcoming",
+          "status": "in-progress",
           "when": {
-            "fr": "plus tard",
-            "en": "later"
+            "fr": "novembre 2026",
+            "en": "November 2026"
           },
           "title": {
             "fr": "Fusionner les deux angles",
@@ -344,10 +344,10 @@
         },
         {
           "id": "actions",
-          "status": "upcoming",
+          "status": "in-progress",
           "when": {
-            "fr": "plus tard",
-            "en": "later"
+            "fr": "novembre 2026",
+            "en": "November 2026"
           },
           "title": {
             "fr": "Reconnaître les actions",
@@ -360,10 +360,10 @@
         },
         {
           "id": "stats-json",
-          "status": "upcoming",
+          "status": "in-progress",
           "when": {
-            "fr": "plus tard",
-            "en": "later"
+            "fr": "novembre 2026",
+            "en": "November 2026"
           },
           "title": {
             "fr": "Le fichier de stats",
