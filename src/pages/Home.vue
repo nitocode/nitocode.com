@@ -65,6 +65,22 @@
         <a class="btn" href="https://ko-fi.com/nitocode" target="_blank" rel="noopener">{{ t(T.coffee) }}<span class="sr-only">{{ t(NEW_TAB) }}</span></a>
       </div>
     </section>
+
+    <!-- Last block of the page, right above the footer's social links -->
+    <section id="discord">
+      <h2 class="reveal"><span class="prompt">&gt;</span> {{ t(T.community) }}</h2>
+      <div class="discord-box reveal">
+        <PixelIcon name="discord" class="icon" />
+        <div>
+          <p class="title">{{ t(T.join) }}</p>
+          <p>{{ t(T.joinText) }}</p>
+          <ul class="channels" :aria-label="t(T.channels)">
+            <li v-for="c in CHANNELS" :key="c">#{{ c }}</li>
+          </ul>
+        </div>
+        <a class="btn" :href="DISCORD" target="_blank" rel="noopener">{{ t(T.joinBtn) }}<span class="sr-only">{{ t(NEW_TAB) }}</span></a>
+      </div>
+    </section>
   </main>
   <SiteFooter />
 </template>
@@ -107,7 +123,18 @@ const T = {
     en: 'What comes out of the lab is meant to be shared. If Noubal or Nitosouris helped you, a coffee on Ko-fi helps pay for the servers and fuels the next nights of code. Above all, it proves to my loved ones that coding at night at least pays for the coffee.',
   },
   coffee: { fr: 'Offrir un café', en: 'Buy me a coffee' },
+  community: { fr: 'Communauté', en: 'Community' },
+  join: { fr: 'Viens en parler sur le Discord', en: 'Come and talk about it on Discord' },
+  joinText: {
+    fr: "Une question sur Nitofoot, une idée pour Noubal, envie de voir les coulisses avant tout le monde ? Le Discord Nitocode, c'est l'endroit où on parle des projets, des tests et des prochaines expériences.",
+    en: 'A question about Nitofoot, an idea for Noubal, want to see behind the scenes before everyone else? The Nitocode Discord is where we talk about the projects, the tests and the next experiments.',
+  },
+  channels: { fr: 'Quelques salons', en: 'A few channels' },
+  joinBtn: { fr: 'Rejoindre le Discord', en: 'Join the Discord' },
 }
+
+const DISCORD = 'https://discord.gg/FRH3RZRh5'
+const CHANNELS = ['annonces', 'nitofoot', 'noubal', 'nitosouris', 'idées']
 
 const EXPERIMENTS = [
   {
@@ -212,5 +239,15 @@ onBeforeUnmount(() => clearInterval(typing))
 .support-box .icon { width: 72px; }
 .support-box p { margin: 0; color: var(--paper); }
 @media (max-width: 640px) { .support-box { grid-template-columns: 1fr; } }
+
+/* ---------- Discord ---------- */
+.discord-box { display: grid; grid-template-columns: auto 1fr auto; gap: 28px; align-items: center; background: var(--panel);
+               padding: 28px; box-shadow: inset 0 4px 0 var(--purple), 6px 6px 0 #000; }
+.discord-box .icon { width: 72px; color: var(--purple); }
+.discord-box p { margin: 0 0 12px; color: var(--paper); }
+.discord-box .title { font: 700 22px/1.25 var(--ubuntu); }
+.discord-box .channels { list-style: none; margin: 4px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.discord-box .channels li { font: 15px var(--mono); color: var(--grey); background: var(--ink); padding: 4px 10px; box-shadow: inset 0 0 0 2px var(--panel-2); }
+@media (max-width: 640px) { .discord-box { grid-template-columns: 1fr; } }
 
 </style>
