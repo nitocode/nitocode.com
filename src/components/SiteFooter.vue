@@ -67,6 +67,7 @@ const GROUPS = [
     links: [
       { icon: 'x', label: 'X', handle: '@nitocode', url: 'https://x.com/nitocode' },
       { icon: 'instagram', label: 'Instagram', handle: '@nito.code', url: 'https://www.instagram.com/nito.code' },
+      { icon: 'discord', label: L.discord, handle: 'Nitocode', url: 'https://discord.gg/FRH3RZRh5' },
       { icon: 'github', label: 'GitHub', handle: 'nitocode', url: 'https://github.com/nitocode' },
       { icon: 'cup', label: 'Ko-fi', handle: 'nitocode', url: 'https://ko-fi.com/nitocode' },
     ],
