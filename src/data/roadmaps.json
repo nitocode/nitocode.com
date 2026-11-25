@@ -252,142 +252,174 @@
       ]
     },
     {
-      "id": "nitofoot",
-      "name": "Nitofoot",
+      "id": "nitosports",
+      "name": "NitoSports",
       "color": "#A3E635",
       "icon": "ball",
       "url": null,
       "pitch": {
-        "fr": "Des stats de pro pour le foot à 5 entre amis : deux caméras, un script qui tourne sur mon PC, et chaque joueur repart avec ses chiffres.",
-        "en": "Pro-style stats for 5-a-side with friends: two cameras, a script running on my PC, and every player leaves with their numbers."
+        "fr": "L'analyse vidéo des sports de raquette, sur ton propre PC : un HUD de retransmission, les stats de chaque joueur, le score et des conseils. Le badminton d'abord, en open source.",
+        "en": "Video analysis for racket sports, on your own PC: a broadcast-style HUD, every player's stats, the score and coaching tips. Badminton first, open source."
       },
       "milestones": [
         {
-          "id": "setup",
+          "id": "hud",
+          "status": "done",
+          "when": {
+            "fr": "novembre 2026",
+            "en": "November 2026"
+          },
+          "title": {
+            "fr": "Le HUD façon jeu vidéo",
+            "en": "A video-game HUD"
+          },
+          "text": {
+            "fr": "Je filme notre double depuis les tribunes, je clique les 4 coins du terrain, et chaque joueur est suivi avec son nom, sa vitesse et sa place sur une carte du terrain.",
+            "en": "I film our doubles from the stands, click the 4 corners of the court, and every player is followed with their name, speed and spot on a court map."
+          }
+        },
+        {
+          "id": "shuttle",
+          "status": "done",
+          "when": {
+            "fr": "novembre 2026",
+            "en": "November 2026"
+          },
+          "title": {
+            "fr": "Suivre le volant",
+            "en": "Following the shuttle"
+          },
+          "text": {
+            "fr": "Le volant est suivi image par image : frappes, échanges, type de coup (service, amorti, lob, smash, drive) et vitesse au départ de la raquette.",
+            "en": "The shuttle is followed frame by frame: hits, rallies, shot type (serve, drop, lift, smash, drive) and speed off the racket."
+          }
+        },
+        {
+          "id": "3d",
+          "status": "done",
+          "when": {
+            "fr": "novembre 2026",
+            "en": "November 2026"
+          },
+          "title": {
+            "fr": "Le volant en 3D",
+            "en": "The shuttle in 3D"
+          },
+          "text": {
+            "fr": "La caméra est calibrée sur la hauteur du filet : chaque trajectoire est recalculée en 3D, avec la gravité et le freinage du volant, même quand l'impact n'est pas vu.",
+            "en": "The camera is calibrated on the net height: every flight is rebuilt in 3D, with gravity and the shuttle's drag, even when the landing is not seen."
+          }
+        },
+        {
+          "id": "score",
+          "status": "done",
+          "when": {
+            "fr": "novembre 2026",
+            "en": "November 2026"
+          },
+          "title": {
+            "fr": "Le score lu dans la vidéo",
+            "en": "The score read from the video"
+          },
+          "text": {
+            "fr": "Les règles du badminton (le gagnant sert, le côté de service suit le score) retrouvent qui a gagné chaque point, avec une correction à la main si besoin.",
+            "en": "The rules of badminton (the winner serves, the service court follows the score) work out who won each point, with a manual fix when needed."
+          }
+        },
+        {
+          "id": "coaching",
+          "status": "done",
+          "when": {
+            "fr": "novembre 2026",
+            "en": "November 2026"
+          },
+          "title": {
+            "fr": "Les conseils",
+            "en": "Coaching tips"
+          },
+          "text": {
+            "fr": "Pourquoi chaque point a été gagné, les priorités de chaque équipe, la posture et les appuis de chaque joueur, avec les moments de la vidéo.",
+            "en": "Why each point was won, each team's priorities, every player's posture and footwork, with the matching moments of the video."
+          }
+        },
+        {
+          "id": "replay",
+          "status": "done",
+          "when": {
+            "fr": "novembre 2026",
+            "en": "November 2026"
+          },
+          "title": {
+            "fr": "Rejouer un point en 3D",
+            "en": "Replaying a point in 3D"
+          },
+          "text": {
+            "fr": "N'importe quel point rejoué dans une scène 3D, caméra libre : de quoi faire une capture et montrer une situation à un coach.",
+            "en": "Any point replayed in a 3D scene with a free camera: grab a screenshot and show a situation to a coach."
+          }
+        },
+        {
+          "id": "open-source",
           "status": "in-progress",
           "when": {
             "fr": "novembre 2026",
             "en": "November 2026"
           },
           "title": {
-            "fr": "Le tournage",
-            "en": "The filming setup"
+            "fr": "Le passage en open source",
+            "en": "Going open source"
           },
           "text": {
-            "fr": "Deux caméras d'action (DJI Osmo Action et GoPro) fixées en hauteur dans deux coins opposés, en 720p. Premier test : un extrait de 5 minutes.",
-            "en": "Two action cameras (DJI Osmo Action and GoPro) mounted high in two opposite corners, in 720p. First test: a 5-minute clip."
+            "fr": "Dépôt public sous licence AGPL, règles de contribution, et le site nitosports.com avec une démo jouable dans le navigateur et le guide d'installation.",
+            "en": "A public repository under the AGPL licence, contribution rules, and the nitosports.com website with a demo you can play in the browser and the install guide."
           }
         },
         {
-          "id": "detect",
-          "status": "in-progress",
-          "when": {
-            "fr": "novembre 2026",
-            "en": "November 2026"
-          },
-          "title": {
-            "fr": "Repérer joueurs et ballon",
-            "en": "Spotting players and the ball"
-          },
-          "text": {
-            "fr": "Un modèle de détection d'images tourne en local sur la carte graphique du PC (RTX 4070) : pas d'envoi de vidéo, pas d'abonnement.",
-            "en": "An image detection model runs locally on the PC's graphics card (RTX 4070): no video upload, no subscription."
-          }
-        },
-        {
-          "id": "track",
-          "status": "in-progress",
-          "when": {
-            "fr": "novembre 2026",
-            "en": "November 2026"
-          },
-          "title": {
-            "fr": "Suivre chaque joueur",
-            "en": "Following each player"
-          },
-          "text": {
-            "fr": "Garder la même identité pour chaque joueur pendant tout le match, avec ou sans chasubles. On nomme chacun une seule fois au début.",
-            "en": "Keep each player's identity for the whole match, with or without bibs. Everyone is named once at the start."
-          }
-        },
-        {
-          "id": "pitch-map",
-          "status": "in-progress",
-          "when": {
-            "fr": "novembre 2026",
-            "en": "November 2026"
-          },
-          "title": {
-            "fr": "Le terrain vu du dessus",
-            "en": "The pitch from above"
-          },
-          "text": {
-            "fr": "Passer de l'image au terrain en mètres : distance parcourue, vitesse de pointe et carte de chaleur de chaque joueur.",
-            "en": "Go from the image to the pitch in metres: distance covered, top speed and a heatmap for each player."
-          }
-        },
-        {
-          "id": "two-cameras",
-          "status": "in-progress",
-          "when": {
-            "fr": "novembre 2026",
-            "en": "November 2026"
-          },
-          "title": {
-            "fr": "Fusionner les deux angles",
-            "en": "Merging both angles"
-          },
-          "text": {
-            "fr": "Synchroniser les deux vidéos et croiser les points de vue, pour ne plus perdre un joueur caché derrière un autre.",
-            "en": "Sync both videos and combine the viewpoints, so a player hidden behind another is never lost."
-          }
-        },
-        {
-          "id": "actions",
-          "status": "in-progress",
-          "when": {
-            "fr": "novembre 2026",
-            "en": "November 2026"
-          },
-          "title": {
-            "fr": "Reconnaître les actions",
-            "en": "Recognising actions"
-          },
-          "text": {
-            "fr": "Passes, tirs, buts, interceptions, arrêts du gardien : qui a fait quoi, et à quel moment du match.",
-            "en": "Passes, shots, goals, interceptions, saves: who did what, and when in the match."
-          }
-        },
-        {
-          "id": "stats-json",
-          "status": "in-progress",
-          "when": {
-            "fr": "novembre 2026",
-            "en": "November 2026"
-          },
-          "title": {
-            "fr": "Le fichier de stats",
-            "en": "The stats file"
-          },
-          "text": {
-            "fr": "Un fichier JSON par match, au format ouvert et documenté, que n'importe quelle app de foot peut lire.",
-            "en": "One JSON file per match, in an open and documented format that any football app can read."
-          }
-        },
-        {
-          "id": "apps",
+          "id": "engine",
           "status": "upcoming",
           "when": {
             "fr": "plus tard",
             "en": "later"
           },
           "title": {
-            "fr": "Brancher les apps de foot",
-            "en": "Plugging into football apps"
+            "fr": "Un moteur plus solide",
+            "en": "A sturdier engine"
           },
           "text": {
-            "fr": "Par exemple l'app d'un ami où l'on note buteurs, passeurs et badges en fin de match : les stats arriveraient toutes seules.",
-            "en": "For example a friend's app where we log scorers, assists and end-of-match badges: the stats would fill in by themselves."
+            "fr": "Plus de vidéos de test (simple, autres salles), des coups mieux reconnus, une analyse plus rapide, et un cœur commun prêt pour d'autres sports.",
+            "en": "More test videos (singles, other halls), better shot recognition, faster analysis, and a shared core ready for other sports."
+          }
+        },
+        {
+          "id": "cloud",
+          "status": "upcoming",
+          "when": {
+            "fr": "plus tard",
+            "en": "later"
+          },
+          "title": {
+            "fr": "L'analyse en ligne",
+            "en": "Online analysis"
+          },
+          "text": {
+            "fr": "Pour ceux qui n'ont pas de carte graphique : envoyer sa vidéo depuis le navigateur, l'analyse tourne sur des serveurs en Europe, payée avec des crédits. L'appli locale reste gratuite.",
+            "en": "For people without a graphics card: upload the video from the browser, the analysis runs on servers in Europe, paid with credits. The local app stays free."
+          }
+        },
+        {
+          "id": "more-sports",
+          "status": "upcoming",
+          "when": {
+            "fr": "plus tard",
+            "en": "later"
+          },
+          "title": {
+            "fr": "D'autres sports",
+            "en": "More sports"
+          },
+          "text": {
+            "fr": "Padel, tennis, tennis de table, puis volley, dans l'ordre où on me les demande.",
+            "en": "Padel, tennis, table tennis, then volleyball, in the order people ask for them."
           }
         }
       ]

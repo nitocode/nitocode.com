@@ -126,15 +126,15 @@ const T = {
   community: { fr: 'Communauté', en: 'Community' },
   join: { fr: 'Viens en parler sur le Discord', en: 'Come and talk about it on Discord' },
   joinText: {
-    fr: "Une question sur Nitofoot, une idée pour Noubal, envie de voir les coulisses avant tout le monde ? Le Discord Nitocode, c'est l'endroit où on parle des projets, des tests et des prochaines expériences.",
-    en: 'A question about Nitofoot, an idea for Noubal, want to see behind the scenes before everyone else? The Nitocode Discord is where we talk about the projects, the tests and the next experiments.',
+    fr: "Une question sur NitoSports, une idée pour Noubal, envie de voir les coulisses avant tout le monde ? Le Discord Nitocode, c'est l'endroit où on parle des projets, des tests et des prochaines expériences.",
+    en: 'A question about NitoSports, an idea for Noubal, want to see behind the scenes before everyone else? The Nitocode Discord is where we talk about the projects, the tests and the next experiments.',
   },
   channels: { fr: 'Quelques salons', en: 'A few channels' },
   joinBtn: { fr: 'Rejoindre le Discord', en: 'Join the Discord' },
 }
 
 const DISCORD = 'https://discord.gg/FRH3RZRh5'
-const CHANNELS = ['annonces', 'nitofoot', 'noubal', 'nitosouris', 'idées']
+const CHANNELS = ['annonces', 'nitosports', 'noubal', 'nitosouris', 'idées']
 
 const EXPERIMENTS = [
   {
@@ -160,13 +160,13 @@ const EXPERIMENTS = [
     cta: { fr: 'Essayer nitosouris.com', en: 'Try nitosouris.com' },
   },
   {
-    id: 'nitofoot', num: 'EXP_03', name: 'Nitofoot', color: '#A3E635', icon: 'ball', url: null,
-    tag: { fr: 'stats de foot à 5, analysées sur mon PC', en: '5-a-side stats, analysed on my PC' },
-    text: { fr: 'Les pros ont des capteurs pour mesurer chaque course. Nous, au five entre amis, on n’a rien : je filme, un script analyse.', en: 'Pros have trackers to measure every run. We, playing 5-a-side with friends, have nothing: I film, a script analyses.' },
+    id: 'nitosports', num: 'EXP_03', name: 'NitoSports', color: '#A3E635', icon: 'ball', url: null,
+    tag: { fr: 'analyse vidéo des sports de raquette · open source', en: 'video analysis for racket sports · open source' },
+    text: { fr: 'Les pros ont des analystes et des caméras partout. Nous, au club, on a un téléphone : je filme le match, mon PC en sort un HUD de retransmission, les stats et des conseils.', en: 'Pros have analysts and cameras everywhere. We, at the club, have a phone: I film the match, my PC turns it into a broadcast-style HUD, stats and coaching tips.' },
     points: [
-      { fr: 'Deux caméras en hauteur, aucun capteur sur les joueurs', en: 'Two cameras up high, no tracker on the players' },
-      { fr: 'Distance, passes, buts, arrêts : tout tourne en local sur ma carte graphique', en: 'Distance, passes, goals, saves: it all runs locally on my graphics card' },
-      { fr: 'Un fichier de stats ouvert, prêt pour les apps de foot', en: 'An open stats file, ready for football apps' },
+      { fr: 'Le badminton d’abord : joueurs, volant, coups et score, tout lu dans la vidéo', en: 'Badminton first: players, shuttle, shots and score, all read from the video' },
+      { fr: 'Tout tourne en local sur la carte graphique, aucune vidéo envoyée', en: 'It all runs locally on the graphics card, no video uploaded' },
+      { fr: 'Open source, avec une démo à essayer dans le navigateur', en: 'Open source, with a demo to try in the browser' },
     ],
   },
 ]
@@ -174,8 +174,8 @@ const EXPERIMENTS = [
 usePage({
   title: { fr: "Nitocode · j'expérimente pour moi, tout le monde en profite", en: 'Nitocode · I experiment for myself, and everyone benefits' },
   description: {
-    fr: "Nitocode : je pars de mes propres problèmes, j'expérimente le soir, et ce qui marche, je le partage pour que tout le monde en profite. Noubal, Nitosouris, Nitofoot.",
-    en: 'Nitocode: I start from my own problems, experiment at night, and what works, I share so everyone can benefit. Noubal, Nitosouris, Nitofoot.',
+    fr: "Nitocode : je pars de mes propres problèmes, j'expérimente le soir, et ce qui marche, je le partage pour que tout le monde en profite. Noubal, Nitosouris, NitoSports.",
+    en: 'Nitocode: I start from my own problems, experiment at night, and what works, I share so everyone can benefit. Noubal, Nitosouris, NitoSports.',
   },
   path: '/',
   full: true,
