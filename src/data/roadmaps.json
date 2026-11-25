@@ -252,8 +252,8 @@
       ]
     },
     {
-      "id": "nitosports",
-      "name": "NitoSports",
+      "id": "nitomatch",
+      "name": "NitoMatch",
       "color": "#A3E635",
       "icon": "ball",
       "url": null,
@@ -370,8 +370,8 @@
             "en": "Going open source"
           },
           "text": {
-            "fr": "Dépôt public sous licence AGPL, règles de contribution, et le site nitosports.com avec une démo jouable dans le navigateur et le guide d'installation.",
-            "en": "A public repository under the AGPL licence, contribution rules, and the nitosports.com website with a demo you can play in the browser and the install guide."
+            "fr": "Dépôt public sous licence AGPL, règles de contribution, et le site nitomatch.com avec une démo jouable dans le navigateur et le guide d'installation.",
+            "en": "A public repository under the AGPL licence, contribution rules, and the nitomatch.com website with a demo you can play in the browser and the install guide."
           }
         },
         {
