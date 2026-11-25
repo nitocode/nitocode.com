@@ -112,7 +112,7 @@ export const WORKFLOWS = [
     ],
   },
   {
-    id: 'nitosports-match',
+    id: 'nitomatch-analysis',
     icon: 'ball',
     title: { fr: 'Analyser un match de badminton', en: 'Analysing a badminton match' },
     summary: {
@@ -125,7 +125,7 @@ export const WORKFLOWS = [
         tool: { fr: 'téléphone · 1080p', en: 'phone · 1080p' }, duration: { fr: '1 min de pose', en: '1 min setup' } },
       { icon: 'person', who: 'me', title: { fr: 'Je règle l’analyse', en: 'I set up the analysis' },
         text: { fr: 'Je clique les 4 coins du terrain, je nomme les joueurs une seule fois et je choisis le look du HUD avec un aperçu en direct.', en: 'I click the 4 corners of the court, name the players once and pick the HUD look with a live preview.' },
-        tool: { fr: 'NitoSports · navigateur', en: 'NitoSports · browser' }, duration: { fr: '2 min', en: '2 min' } },
+        tool: { fr: 'NitoMatch · navigateur', en: 'NitoMatch · browser' }, duration: { fr: '2 min', en: '2 min' } },
       { icon: 'robot', who: 'auto', title: { fr: 'Joueurs et volant', en: 'Players and shuttle' },
         text: { fr: 'Un modèle de pose suit chaque joueur, un autre suit le volant image par image. Tout tourne sur la carte graphique du PC.', en: 'A pose model follows every player, another one follows the shuttle frame by frame. It all runs on the PC’s graphics card.' },
         tool: 'YOLO11-pose · TrackNetV3 · local' },

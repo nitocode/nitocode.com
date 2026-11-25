@@ -94,11 +94,11 @@ const GROUPS = [
     ],
   },
   {
-    id: 'nitosports', name: 'NitoSports', color: '#A3E635', icon: 'ball',
+    id: 'nitomatch', name: 'NitoMatch', color: '#A3E635', icon: 'ball',
     tag: { fr: 'analyse vidéo du badminton', en: 'badminton video analysis' },
     links: [
-      { icon: 'flag', label: L.roadmap, to: '/roadmaps/nitosports' },
-      { icon: 'flow', label: L.workflow, to: '/workflows/nitosports-match' },
+      { icon: 'flag', label: L.roadmap, to: '/roadmaps/nitomatch' },
+      { icon: 'flow', label: L.workflow, to: '/workflows/nitomatch-analysis' },
     ],
   },
 ]

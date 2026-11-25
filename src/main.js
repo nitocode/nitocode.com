@@ -16,6 +16,9 @@ const routes = [
   ...roadmaps.projects.map(p => ({ path: `/roadmaps/${p.id}`, component: Roadmap, props: { id: p.id } })),
   { path: '/workflows', component: Workflows },
   ...WORKFLOWS.map(w => ({ path: `/workflows/${w.id}`, component: Workflow, props: { id: w.id } })),
+  // Old names of NitoMatch (Nitobad → NitoSports → NitoMatch, 2026-11-25): keep shared links working
+  { path: '/roadmaps/nitosports', redirect: '/roadmaps/nitomatch' },
+  { path: '/workflows/nitosports-match', redirect: '/workflows/nitomatch-analysis' },
   { path: '/:unknown(.*)*', redirect: '/' },
 ]
 
